@@ -73,19 +73,21 @@ You probably will only need to interact with files in app/models, app/routes, an
 ## WireFrames
 
 ### Sign Up
-![Read me Images](images/1.png)
-
+![](planning/Create%20Account.jpg)
 ### Sign In
-![Read me Images](images/2.png)
-
+![](planning/Sign-in.jpg)
 ### Index Page
-![Read me Images](images/3.png)
-
-### Plan Trip Page
-![Read me Images](images/4.png)
-
+![](planning/Index.jpg)
 ### Show Page
-![Read me Images](images/5.png)
+![](planning/Show%20Page.jpg)
+### My Index Page
+![](planning/My%20Index.jpg)
+### My Show Page
+![](planning/My%20Show%20Page.jpg)
+### Create Plant
+![](planning/Create%20Page.jpg)
+### Edit Plant
+![](planning/Edit%20Page.jpg)
+### Notes
+![](planning/Notes.jpg)
 
-### Activity Show Page
-![Read me Images](images/6.png)
