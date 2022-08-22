@@ -39,7 +39,7 @@ useEffect(() => {
             setError(true)
         })    
     }, [])
-
+    console.log('++++++', plants)
     if (error) {
         return <p>Error!</p>
     }
@@ -52,11 +52,11 @@ useEffect(() => {
     }
 
     const plantCards = plants.map(plant => (
-        <Card style={{ width: '30%', margin: 5}} key={ plant.id }>
-            <Card.Header><Link to={`/greenhome/${plant.id}`}> { plant.name }</Link></Card.Header>
+        <Card style={{ width: '30%', margin: 5}} key={ plant._id }>
+            <Card.Header><Link to={`/greenhome/${plant._id}`}> { plant.name }</Link></Card.Header>
             <Card.Body>
                 <Card.Text>
-                    <Link to={`/greenhome/${plant.id}`}> <img src={`${plant.image}`} height="200" width="auto" /></Link>
+                    <Link to={`/greenhome/${plant._id}`}> <img src={`${plant.image}`} height="200" width="auto" /></Link>
                 </Card.Text>
             </Card.Body>
         </Card>

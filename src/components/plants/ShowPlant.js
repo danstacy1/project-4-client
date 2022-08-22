@@ -31,6 +31,7 @@ const ShowPlant = (props) => {
     const [updated, setUpdated] = useState(false)
 
     const { id } = useParams()
+    console.log("here are the props", props)
     const navigate = useNavigate()
     // useNavigate returns a function
     // we can call that function to redirect the user wherever we want to
@@ -61,7 +62,7 @@ const ShowPlant = (props) => {
     // here we'll declare a function that runs which will remove the plant
     // this function's promise chain should send a message, and then go somewhere
     const removeThePlant = () => {
-        removePlant(user, plant.id)
+        removePlant(user, plant._id)
             // on success send a success message
             .then(() => {
                 msgAlert({
@@ -108,7 +109,7 @@ const ShowPlant = (props) => {
                     <Card.Header>{ plant.name }</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <div><small> { plant.image }</small></div>
+                            <div><small><img src={`${plant.image}`}></img></small></div>
                             <div><small>Description: { plant.description }</small></div>
                             <div><small>Light: { plant.light }</small></div>
                             <div><small>Water: { plant.water }</small></div>
