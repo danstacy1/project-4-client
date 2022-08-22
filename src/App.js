@@ -13,8 +13,8 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowPlant from './components/plants/ShowPlant'
-// import PlantForm from './components/shared/PlantForm'
-// import CreatePlant from './components/plants/CreatePlant'
+import PlantForm from './components/shared/PlantForm'
+import CreatePlant from './components/plants/CreatePlant'
 
 const App = () => {
 
@@ -79,14 +79,14 @@ const msgAlert = ({ heading, message, variant }) => {
 					path="/greenhome/:id"
 					element={ <ShowPlant user={ user } msgAlert={ msgAlert } />}				
 				/>
-				{/* <Route
-					path="/addPlant"
+				<Route
+					path="/greenhome/addplant"
 					element={
-						<RequireAuth user={ user }>
+						// <RequireAuth user={ user }>
 							<CreatePlant msgAlert={msgAlert} user={user} />
-						</RequireAuth>  
+						// </RequireAuth>  
 					}
-				/> */}
+				/>
 				</Routes>
 					{msgAlerts.map((msgAlert) => (
 						<AutoDismissAlert
