@@ -52,7 +52,7 @@ useEffect(() => {
     }
 
     const plantCards = plants.map(plant => (
-        <Card style={{ width: '30%', margin: 5}} key={ plant.id }>
+        <Card style={{ width: '30%', margin: 5}} key={ plant._id }>
             <Card.Header><Link to={`/greenhome/${plant._id}`}> { plant.name }</Link></Card.Header>
             <Card.Body>
                 <Card.Text>
