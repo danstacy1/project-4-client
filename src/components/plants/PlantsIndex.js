@@ -53,10 +53,10 @@ useEffect(() => {
 
     const plantCards = plants.map(plant => (
         <Card style={{ width: '30%', margin: 5}} key={ plant.id }>
-            <Card.Header>{ plant.name }</Card.Header>
+            <Card.Header><Link to={`/greenhome/${plant.id}`}> { plant.name }</Link></Card.Header>
             <Card.Body>
                 <Card.Text>
-                    <Link to={`/greenhome/${plant.id}`}>View { plant.name }</Link>
+                    <Link to={`/greenhome/${plant.id}`}> <img src={`${plant.image}`} height="200" width="auto" /></Link>
                 </Card.Text>
             </Card.Body>
         </Card>
