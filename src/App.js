@@ -12,7 +12,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-// import ShowPlant from './components/plants/ShowPlant'
+import ShowPlant from './components/plants/ShowPlant'
 // import PlantForm from './components/shared/PlantForm'
 // import CreatePlant from './components/plants/CreatePlant'
 
@@ -72,10 +72,10 @@ const msgAlert = ({ heading, message, variant }) => {
 						<ChangePassword msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
-				{/* <Route
+				<Route
 					path="/greenhome/:id"
 					element={ <ShowPlant user={ user } msgAlert={ msgAlert } />}				
-				/> */}
+				/>
 				{/* <Route
 					path="/addPlant"
 					element={
