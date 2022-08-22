@@ -8,7 +8,6 @@ export const getAllPlants = () => {
 
 // READ => SHOW
 export const getOnePlant = (id) => {
-    console.log("plant id +++++++++++++", id)
     return axios(`${apiUrl}/greenhome/${id}`)
 }
 
