@@ -13,33 +13,63 @@ const PlantForm = (props) => {
             <Form onSubmit={handleSubmit}>
                 <Form.Label htmlFor="name">Name</Form.Label>
                 <Form.Control
-                    placeholder="What is your plant's name?"
+                    placeholder="Type of plant"
                     name="name"
                     id="name"
                     value={ plant.name }
                     onChange={ handleChange }
                 />
-                <Form.Label htmlFor="type">Type</Form.Label>
+                <Form.Label htmlFor="description">Description</Form.Label>
                 <Form.Control
-                    placeholder="What kind of plant is this?"
-                    name="type"
-                    id="type"
-                    value={ plant.type }
+                    placeholder="Description of the plant"
+                    name="description"
+                    id="description"
+                    value={ plant.description }
                     onChange={ handleChange }
                 />
-                <Form.Label htmlFor="age">Age</Form.Label>
+                <Form.Label htmlFor="light">Light</Form.Label>
                 <Form.Control
-                    placeholder="How old is your plant?"
-                    type="number"
-                    name="age"
-                    id="age"
-                    value={ plant.age }
+                    placeholder="Light requirement"
+                    type="text"
+                    name="light"
+                    id="light"
+                    value={ plant.light }
                     onChange={ handleChange }
                 />
-                <Form.Check
-                    label="Is this plant adoptable?"
-                    name="adoptable"
-                    defaultChecked={ plant.adoptable  }
+                <Form.Label htmlFor="water">Water</Form.Label>
+                <Form.Control
+                    placeholder="Water requirement"
+                    type="text"
+                    name="water"
+                    id="water"
+                    value={ plant.water }
+                    onChange={ handleChange }
+                />
+                <Form.Label htmlFor="temperature">Temperature</Form.Label>
+                <Form.Control
+                    placeholder="Temperature requirement"
+                    type="text"
+                    name="temperature"
+                    id="temperature"
+                    value={ plant.temperature }
+                    onChange={ handleChange }
+                />
+                <Form.Label htmlFor="poisonous">Poisonous</Form.Label>
+                <Form.Control
+                    placeholder="Is the plant poisonous?"
+                    type="text"
+                    name="poisonous"
+                    id="poisonous"
+                    value={ plant.poisonous }
+                    onChange={ handleChange }
+                />
+                <Form.Label htmlFor="image">Image</Form.Label>
+                <Form.Control
+                    placeholder="Image URL"
+                    type="text"
+                    name="image"
+                    id="image"
+                    value={ plant.image }
                     onChange={ handleChange }
                 />
                 <Button type="submit">Submit</Button>
@@ -49,4 +79,3 @@ const PlantForm = (props) => {
 }
 
 export default PlantForm
-© 2022 GitHub, Inc.
