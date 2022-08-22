@@ -27,7 +27,7 @@ const cardContainerLayout = {
 const ShowPlant = (props) => {
     const [plant, setPlant] = useState(null)
     const [editModalShow, setEditModalShow] = useState(false)
-    // const [toyModalShow, setToyModalShow] = useState(false)
+    const [toyModalShow, setToyModalShow] = useState(false)
     const [updated, setUpdated] = useState(false)
 
     const { id } = useParams()
