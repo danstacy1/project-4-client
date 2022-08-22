@@ -1,9 +1,9 @@
-const RemoveFavorite = () => {
+const RemoveMyPlant = () => {
 	return (
 		<>
-			<button className='btn mr-2'> Remove from Favorites </button>
+			<button className='btn mr-2'> Remove from My Plants </button>
 		</>
 	);
 };
 
-export default RemoveFavorite;
+export default RemoveMyPlant;
