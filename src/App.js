@@ -50,6 +50,9 @@ const msgAlert = ({ heading, message, variant }) => {
 				<Route 
 					path='/' element={<Home msgAlert={msgAlert} user={user} />} 
 				/>
+				<Route 
+					path='/greenhome' element={<Home msgAlert={msgAlert} user={user} />} 
+				/>
 				<Route
 					path='/sign-up'
 					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
