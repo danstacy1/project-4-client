@@ -12,9 +12,12 @@ const CreatePlant = (props) => {
 
     const [plant, setPlant] = useState({
         name: '',
-        type: '',
-        age: '',
-        adoptable: false
+        description: '',
+        light: '',
+        water: '',
+        temperature: '',
+        poisonous: '',
+        image: ''
     })
 
     console.log('this is plant in createPlant', plant)
@@ -26,17 +29,17 @@ const CreatePlant = (props) => {
 
             console.log('this is the input type', e.target.type)
 
-            if (e.target.type === 'number') {
-                // this is looking at the input type, and changing it from the default, which is a string, into an actual number
-                updatedValue = parseInt(e.target.value)
-            }
+            // if (e.target.type === 'number') {
+            //     // this is looking at the input type, and changing it from the default, which is a string, into an actual number
+            //     updatedValue = parseInt(e.target.value)
+            // }
 
             // this handles the checkbox, changing on to true etc
-            if (updatedName === "adoptable" && e.target.checked) {
-                updatedValue = true
-            } else if (updatedName === "adoptable" && !e.target.checked) {
-                updatedValue = false
-            }
+            // if (updatedName === "adoptable" && e.target.checked) {
+            //     updatedValue = true
+            // } else if (updatedName === "adoptable" && !e.target.checked) {
+            //     updatedValue = false
+            // }
 
             const updatedPlant = {
                 [updatedName]: updatedValue
@@ -55,7 +58,7 @@ const CreatePlant = (props) => {
 
         createPlant(user, plant)
             // if we're successful, navigate to the show page for the new plant
-            .then(res => { navigate(`/plants/${res.data.plant.id}`)})
+            .then(res => { navigate(`/plants/${res.data.plant._id}`)})
             // send a success message to the user
             .then(() => {
                 msgAlert({

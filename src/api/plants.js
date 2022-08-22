@@ -21,14 +21,14 @@ export const createPlant = (user, newPlant) => {
     // we're going to refer to this as newPlant
     // console.log('this is user', user)
     // console.log('this is newPlant', newPlant)
-	return axios({
-		url: apiUrl + '/plants',
-		method: 'POST',
-		headers: {
-			Authorization: `Token token=${user.token}`,
-		},
-		data: { plant: newPlant }
-	})
+	return axios(`${apiUrl}/greenhome/myplants`)
+		// url: apiUrl + '/plants',
+		// method: 'POST',
+		// headers: {
+		// 	Authorization: `Token token=${user.token}`,
+		// },
+		// data: { plant: newPlant }
+	// })
 }
 
 // UPDATE
