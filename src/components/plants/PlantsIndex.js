@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllPlants } from '../../api/plants'
 import messages from '../shared/AutoDismissAlert/messages'
+
+
 // PlantsIndex should make a request to the api
 // To get all plants
 // Then display them when it gets them
@@ -16,6 +18,7 @@ justifyContent: 'center'
 const PlantsIndex = (props) => {
 const [plants, setPlants] = useState(null)
 const [error, setError] = useState(false)
+
 const { msgAlert } = props
 console.log('Props in PlantsIndex', props)
 useEffect(() => {
@@ -41,6 +44,7 @@ useEffect(() => {
     } else if (plants.length === 0) {
         return <p>No plants yet. Better add some.</p>
     }
+
     const plantCards = plants.map(plant => (
         <Card style={{ width: '30%', margin: 5}} key={ plant._id }>
             <Card.Header><Link to={`/greenhome/${plant._id}`}> { plant.name }</Link></Card.Header>
@@ -48,6 +52,16 @@ useEffect(() => {
                 <Card.Text>
                     <Link to={`/greenhome/${plant._id}`}> <img src={`${plant.image}`} height="200" width="auto" /></Link>
                 </Card.Text>
+                { addRemoveMyPlant(plant)
+                    ?  
+                    <div onClick={() => props.handleRemoveClick(plant)} className='controls'>
+                        <RemoveMyPlant /> 
+                    </div>  
+                    :     
+                    <div onClick={() => props.handleMyPlantClick(plant)} className='controls'>
+                        <AddMyPlant />
+                    </div>        
+                }
             </Card.Body>
         </Card>
     ))
