@@ -1,26 +1,34 @@
 import { useState,useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
+
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllPlants } from '../../api/plants'
 import messages from '../shared/AutoDismissAlert/messages'
-
+import AddMyPlant from '../my_plants/AddMyPlants'
+import RemoveMyPlant from '../my_plants/RemoveMyPlants'
 
 // PlantsIndex should make a request to the api
 // To get all plants
 // Then display them when it gets them
+
 // style for our card container
 const cardContainerStyle = {
 display: 'flex',
 flexFlow: 'row wrap',
 justifyContent: 'center'
 }
+
 const PlantsIndex = (props) => {
 const [plants, setPlants] = useState(null)
 const [error, setError] = useState(false)
 
+const {my_plants} = props
+const {user} = props
 const { msgAlert } = props
+
 console.log('Props in PlantsIndex', props)
+
 useEffect(() => {
     console.log(props)
     getAllPlants()
@@ -32,17 +40,32 @@ useEffect(() => {
                 variant: 'danger',
             })
             setError(true)
-        })
+        })    
     }, [])
     console.log('++++++', plants)
     if (error) {
         return <p>Error!</p>
     }
+
     // If plants haven't been loaded yet, show a loading message
     if (!plants) {
         return <LoadingScreen />
     } else if (plants.length === 0) {
         return <p>No plants yet. Better add some.</p>
+    }
+
+    const addRemoveMyPlant = (plant) => {
+        console.log('plant', plant)
+            for (let i = 0; i<my_plants.length; i++) {
+                // console.log('list id', myplants[i]._id)
+                // console.log('book id', book._id)
+                // console.log('user id', user._id)
+                // console.log('book user id', myplants[i].userId)
+                if(my_plants[i]._id === plant._id && user._id === my_plants[i].userId) {
+                    return true
+                }
+            }
+            return false
     }
 
     const plantCards = plants.map(plant => (
@@ -65,10 +88,12 @@ useEffect(() => {
             </Card.Body>
         </Card>
     ))
+
     return (
         <div style={ cardContainerStyle }>
             { plantCards }
         </div>
     )
 }
+
 export default PlantsIndex
