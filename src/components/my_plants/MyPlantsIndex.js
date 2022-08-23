@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
-import AddFavorite from '../favorites/AddFavorite'
-import RemoveFavorite from '../favorites/RemoveFavorite'
+import AddMyPlant from '../myplants/AddMyPlant'
+import RemoveMyPlant from '../myplants/RemoveMyPlant'
 
 const MyPlantsIndex = (props) => {
     const { my_plants } = props
