@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
-import AddMyPlant from '../myplants/AddMyPlant'
-import RemoveMyPlant from '../myplants/RemoveMyPlant'
+import AddMyPlant from '../my_plants/AddMyPlant'
+import RemoveMyPlant from '../my_plants/RemoveMyPlant'
 
 const MyPlantsIndex = (props) => {
     const { my_plants } = props
