@@ -18,6 +18,11 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
+		<Nav.Item className='m-2'>
+            <Link to="/greenhome/myplants" style={ linkStyle }>
+                My Plants
+            </Link>
+        </Nav.Item>
 	</>
 )
 
@@ -46,7 +51,7 @@ const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-                react-auth-template
+                Green Home
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />

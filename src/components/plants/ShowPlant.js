@@ -7,7 +7,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Container, Card, Button } from 'react-bootstrap'
 
 import LoadingScreen from '../shared/LoadingScreen'
-import { getOnePlant, updatePlant, removePlant } from '../../api/plants'
+import { getOnePlant} from '../../api/plants'
 import messages from '../shared/AutoDismissAlert/messages'
 // import EditPlantModal from './EditPlantModal'
 // import NewToyModal from '../toys/NewToyModal'
@@ -61,27 +61,27 @@ const ShowPlant = (props) => {
 
     // here we'll declare a function that runs which will remove the plant
     // this function's promise chain should send a message, and then go somewhere
-    const removeThePlant = () => {
-        removePlant(user, plant._id)
-            // on success send a success message
-            .then(() => {
-                msgAlert({
-                    heading: 'Success',
-                    message: messages.removePlantSuccess,
-                    variant: 'success'
-                })
-            })
-            // then navigate to index
-            .then(() => {navigate('/')})
-            // on failure send a failure message
-            .catch(err => {                   
-                msgAlert({
-                    heading: 'Error removing plant',
-                    message: messages.removePlantFailure,
-                    variant: 'danger'
-                })
-            })
-    }
+    // const removeThePlant = () => {
+    //     removePlant(user, plant._id)
+    //         // on success send a success message
+    //         .then(() => {
+    //             msgAlert({
+    //                 heading: 'Success',
+    //                 message: messages.removePlantSuccess,
+    //                 variant: 'success'
+    //             })
+    //         })
+    //         // then navigate to index
+    //         .then(() => {navigate('/')})
+    //         // on failure send a failure message
+    //         .catch(err => {                   
+    //             msgAlert({
+    //                 heading: 'Error removing plant',
+    //                 message: messages.removePlantFailure,
+    //                 variant: 'danger'
+    //             })
+    //         })
+    // }
     // let toyCards
     // if (pet) {
     //     if (pet.toys.length > 0) {
