@@ -54,13 +54,16 @@ useEffect(() => {
         return <p>No plants yet. Better add some.</p>
     }
 
+    
+
     const addRemoveMyPlant = (plant) => {
         console.log('plant', plant)
-            for (let i = 0; i<my_plants.length; i++) {
-                // console.log('list id', myplants[i]._id)
-                // console.log('book id', book._id)
-                // console.log('user id', user._id)
-                // console.log('book user id', myplants[i].userId)
+        console.log('MY_PLANT =========', my_plants)
+        for (let i = 0; i < my_plants.length; i++) {
+                console.log('list id', my_plants[i]._id)
+                console.log('plant id', plant._id)
+                console.log('user id', user._id)
+                console.log('plant user id', my_plants[i].userId)
                 if(my_plants[i]._id === plant._id && user._id === my_plants[i].userId) {
                     return true
                 }

@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 // useNavigate will allow us to navigate to a specific page
 import { Container, Card, Button } from 'react-bootstrap'
 import LoadingScreen from '../shared/LoadingScreen'
-import { getOnePlant, updatePlant, removePlant } from '../../api/plants'
+import { getOnePlant} from '../../api/plants'
 import messages from '../shared/AutoDismissAlert/messages'
 // import EditPlantModal from './EditPlantModal'
 // import NewToyModal from '../toys/NewToyModal'
@@ -61,7 +61,7 @@ const ShowPlant = (props) => {
             // then navigate to index
             .then(() => {navigate('/')})
             // on failure send a failure message
-            .catch(err => {
+            .catch(err => {                   
                 msgAlert({
                     heading: 'Error removing plant',
                     message: messages.removePlantFailure,

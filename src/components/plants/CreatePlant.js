@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { createPlant } from '../../api/plants'
+import { createPlant } from '../../api/my_plants'
 import { useNavigate } from 'react-router-dom'
 import { createPlantSuccess, createPlantFailure } from '../shared/AutoDismissAlert/messages'
 import PlantForm from '../shared/PlantForm'
@@ -58,7 +58,8 @@ const CreatePlant = (props) => {
 
         createPlant(user, plant)
             // if we're successful, navigate to the show page for the new plant
-            .then(res => { navigate(`/plants/${res.data.plant._id}`)})
+            .then(res => { navigate(`/greenhome/myplants`)})
+            // ${res.data.plant._id}`)})
             // send a success message to the user
             .then(() => {
                 msgAlert({
