@@ -6,7 +6,7 @@ import RemoveMyPlant from '../my_plants/RemoveMyPlants'
 import LoadingScreen from '../shared/LoadingScreen'
 
 const MyPlantsIndex = (props) => {
-    const { my_plants } = props
+    const { myPlants } = props
     const { user } = props
     
     const cardContainerStyle = {
@@ -17,27 +17,27 @@ const MyPlantsIndex = (props) => {
 
     // const { showModal, setShowModal } = props
 
-    if (!my_plants) {
+    if (!myPlants) {
         return <LoadingScreen />
-    } else if (my_plants.length === 0) {
+    } else if (myPlants.length === 0) {
         return <p>No plants yet. Better add some.</p>
     }
 
     const addRemoveMyPlant = (plant) => {
         // console.log('plant',  plant)
-            for (let i = 0; i <my_plants.length; i++) {
+            for (let i = 0; i <myPlants.length; i++) {
                 // console.log('list id', favorites[i]._id)
                 // console.log('book id', book._id)
                 // console.log('user id', user._id)
                 // console.log('book user id', favorites[i].userId)
-                if(my_plants[i]._id === plant._id && user._id === my_plants[i].userId) {
+                if(myPlants[i]._id === plant._id && user._id === myPlants[i].userId) {
                     return true
                 }
             }
             return false
     }
-// change myPlants to myPlantCards and my_plants to myPlants
-    const myPlants = my_plants.map(plant => {
+// change myPlants to myPlantCards and myPlants to myPlants
+    const myPlantCards = myPlants.map(plant => {
         console.log('my plant map ========', plant)
         console.log('my plant props ========', props)
         if (plant.userId === user._id) {

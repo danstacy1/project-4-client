@@ -23,7 +23,7 @@ const PlantsIndex = (props) => {
 const [plants, setPlants] = useState(null)
 const [error, setError] = useState(false)
 
-const {my_plants} = props
+const {myPlants} = props
 const {user} = props
 const { msgAlert } = props
 
@@ -58,13 +58,13 @@ useEffect(() => {
 
     const addRemoveMyPlant = (plant) => {
         console.log('plant', plant)
-        console.log('MY_PLANT =========', my_plants)
-        for (let i = 0; i < my_plants.length; i++) {
-                console.log('list id', my_plants[i]._id)
+        console.log('MYPLANT =========', myPlants)
+        for (let i = 0; i < myPlants.length; i++) {
+                console.log('list id', myPlants[i]._id)
                 console.log('plant id', plant._id)
                 console.log('user id', user._id)
-                console.log('plant user id', my_plants[i].userId)
-                if(my_plants[i]._id === plant._id && user._id === my_plants[i].userId) {
+                console.log('plant user id', myPlants[i].userId)
+                if(myPlants[i]._id === plant._id && user._id === myPlants[i].userId) {
                     return true
                 }
             }

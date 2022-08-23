@@ -21,7 +21,7 @@ const App = () => {
 
 const [user, setUser] = useState(null)
 const [msgAlerts, setMsgAlerts] = useState([])
-const [my_plants, setMyPlants] = useState([])
+const [myPlants, setMyPlants] = useState([])
 
 console.log('user in app', user)
 console.log('message alerts', msgAlerts)
@@ -59,31 +59,31 @@ const saveToLocalStorage = (items) => {
 	localStorage.setItem('My-Plant-List', JSON.stringify(items));
 };
 
-const handleMyPlantClick = (plant) => {
-	if (!plant.userId) {
-		plant.userId = user._id
+const handleMyPlantClick = (plant, myPlant) => {
+	if (!myPlant.userId) {
+		myPlant.userId = user._id
 	}
 	// console.log(favorites)
 	let status = false
 	// console.log(status)
 
 	function containsPlant(obj) {
-		for (let i = 0; i<my_plants.length; i++) {
-			// console.log('my_plants id', my_plants[i]._id)
+		for (let i = 0; i < myPlants.length; i++) {
+			// console.log('myPlants id', myPlants[i]._id)
 			// console.log('obj id', obj._id)
 			// console.log('user id', user._id)
 			// console.log('plant user id', plant.userId)
-			if(my_plants[i]._id === obj._id && user._id === my_plants[i].userId) {
+			if(myPlants[i]._id === obj._id && user._id === myPlants[i].userId) {
 				return status = true
 			}
 		}
 		// console.log(status)
 		return
 	}
-	containsPlant(plant, my_plants)
+	containsPlant(plant, myPlants)
 	console.log('status', status)
 	if (!status && user) {
-		const newMyPlantList = [...my_plants, plant]
+		const newMyPlantList = [...myPlants, plant]
 		// console.log('working')
 		setMyPlants(newMyPlantList);
 		saveToLocalStorage(newMyPlantList);
@@ -91,12 +91,12 @@ const handleMyPlantClick = (plant) => {
 };
 
 const handleRemoveClick = (plant) => {
-	const findPlant = my_plants.findIndex(
+	const findPlant = myPlants.findIndex(
 		(myPlant) => myPlant._id === plant._id && myPlant.userId === user._id
 	);
 	
 	// console.log('locate plant', findPlant)
-	const updateMyPlantList = my_plants.filter(
+	const updateMyPlantList = myPlants.filter(
 		(_, i) => i != findPlant
 	)
 	
@@ -104,12 +104,12 @@ const handleRemoveClick = (plant) => {
 	// console.log(status)
 
 	function containsUser(obj) {
-		for (let i = 0; i<my_plants.length; i++) {
+		for (let i = 0; i<myPlants.length; i++) {
 			// console.log('favorites id', favorites[i]._id)
 			// console.log('obj id', obj._id)
 			// console.log('user id', user._id)
 			// console.log('plant user id', plant.userId)
-			if(my_plants[i]._id === obj._id && user._id === my_plants[i].userId) {
+			if(myPlants[i]._id === obj._id && user._id === myPlants[i].userId) {
 				return status = true
 			}
 		}
@@ -159,7 +159,7 @@ const handleRemoveClick = (plant) => {
 						</RequireAuth>}
 				/>
 				<Route 
-					path='/greenhome' element={<Home msgAlert={msgAlert} user={user} handleMyPlantClick={handleMyPlantClick} my_plants={ my_plants } 
+					path='/greenhome' element={<Home msgAlert={msgAlert} user={user} handleMyPlantClick={handleMyPlantClick} myPlants={ myPlants } 
 					handleRemoveClick={handleRemoveClick}/>} 
 				/>
 				<Route
@@ -179,7 +179,7 @@ const handleRemoveClick = (plant) => {
 					element={
 						<MyPlantsIndex 
 						msgAlert={msgAlert} clearUser={clearUser} user={user} 
-						handleMyPlantClick={handleMyPlantClick} my_plants={ my_plants } 
+						handleMyPlantClick={handleMyPlantClick} myPlants={ myPlants } 
 						handleRemoveClick={handleRemoveClick}/>							
 					}
 				/>
