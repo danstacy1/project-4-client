@@ -48,27 +48,27 @@ const ShowPlant = (props) => {
     //****** WE DONT NEED THIS HERE MOVE TO MY SHOW PLANT ********///////
     // here we'll declare a function that runs which will remove the plant
     // this function's promise chain should send a message, and then go somewhere
-    const removeThePlant = () => {
-        removePlant(user, plant._id)
-            // on success send a success message
-            .then(() => {
-                msgAlert({
-                    heading: 'Success',
-                    message: messages.removePlantSuccess,
-                    variant: 'success'
-                })
-            })
-            // then navigate to index
-            .then(() => {navigate('/')})
-            // on failure send a failure message
-            .catch(err => {                   
-                msgAlert({
-                    heading: 'Error removing plant',
-                    message: messages.removePlantFailure,
-                    variant: 'danger'
-                })
-            })
-    }
+    // const removeThePlant = () => {
+    //     removePlant(user, plant._id)
+    //         // on success send a success message
+    //         .then(() => {
+    //             msgAlert({
+    //                 heading: 'Success',
+    //                 message: messages.removePlantSuccess,
+    //                 variant: 'success'
+    //             })
+    //         })
+    //         // then navigate to index
+    //         .then(() => {navigate('/')})
+    //         // on failure send a failure message
+    //         .catch(err => {                   
+    //             msgAlert({
+    //                 heading: 'Error removing plant',
+    //                 message: messages.removePlantFailure,
+    //                 variant: 'danger'
+    //             })
+    //         })
+    // }
     // let toyCards
     // if (pet) {
     //     if (pet.toys.length > 0) {

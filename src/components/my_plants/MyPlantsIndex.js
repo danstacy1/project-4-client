@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
-import AddFavorite from '../favorites/AddFavorite'
-import RemoveFavorite from '../favorites/RemoveFavorite'
+import AddMyPlant from '../my_plants/AddMyPlants'
+import RemoveMyPlant from '../my_plants/RemoveMyPlants'
+import LoadingScreen from '../shared/LoadingScreen'
 
 const MyPlantsIndex = (props) => {
     const { my_plants } = props
