@@ -59,15 +59,14 @@ const CreatePlant = (props) => {
         e.preventDefault()
 
         createPlant(user, myPlant)
-<<<<<<<< HEAD:src/components/my_plants/CreateMyPlant.js
+
             // if we're successful, navigate to the show page for the new plant
             // .then(myPlant.push())
             .then(res => { navigate(`/greenhome/myplants`)})
             // ${res.data.plant._id}`)})
-========
             // if we're successful, navigate to the show page for the new myPlant
             .then(res => { navigate(`/greenhome/myplants${res.data.myPlant._id}`)})
->>>>>>>> 06dc16263ea82b96ed34bd8621e137daffee7f05:src/components/myplants/CreateMyPlant.js
+
             // send a success message to the user
             .then(() => {
                 msgAlert({
