@@ -19,13 +19,13 @@ export const createPlant = (user, newPlant) => {
     // when we pass that object into the api createPlant function,
     // it's going to look like the plants in our database
     // we're going to refer to this as newPlant
-    // console.log('this is user', user)
-    // console.log('this is newPlant', newPlant)
+    console.log('this is user', user)
+    console.log('this is newPlant', newPlant)
 	return axios({
 		url: apiUrl + '/greenhome/myplants',
 		method: 'POST',
 		headers: {
-			Authorization: `Token token=${user.token}`,
+			Authorization: `Bearer ${user.token}`,
 		},
 		data: { plant: newPlant }
 	})
