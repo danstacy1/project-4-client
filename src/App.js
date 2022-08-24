@@ -14,7 +14,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowPlant from './components/plants/ShowPlant'
 import PlantForm from './components/shared/PlantForm'
-import CreatePlant from './components/plants/CreatePlant'
+import CreatePlant from './components/my_plants/CreateMyPlant'
 import MyPlantsIndex from './components/my_plants/MyPlantsIndex'
 
 const App = () => {
@@ -170,7 +170,7 @@ const handleRemoveClick = (plant) => {
 					path="/greenhome/addplant"
 					element={
 						<RequireAuth user={ user }>
-							<CreatePlant msgAlert={msgAlert} user={user} />
+							<CreatePlant msgAlert={msgAlert} user={user} myPlants={ myPlants }/>
 						</RequireAuth>  
 					}
 				/>
