@@ -174,8 +174,7 @@ const handleRemoveClick = (plant) => {
 					path="/greenhome/addplant"
 					element={
 						<RequireAuth user={ user }>
-
-							<CreatePlant msgAlert={msgAlert} user={user} myPlants={ myPlants }/>
+							<CreateMyPlant msgAlert={msgAlert} user={user} myPlants={ myPlants }/>
 						</RequireAuth>  
 					}
 				/>
@@ -187,10 +186,7 @@ const handleRemoveClick = (plant) => {
 							msgAlert={msgAlert} clearUser={clearUser} user={user} 
 							handleMyPlantClick={handleMyPlantClick} myPlants={ myPlants } 
 							handleRemoveClick={handleRemoveClick}/>							
-
-							<CreateMyPlant msgAlert={msgAlert} user={user} myPlants={myPlants}/>
-						</RequireAuth>  
-
+						</RequireAuth>
 					}
 				/>
 				</Routes>
