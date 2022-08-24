@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { createPlant } from '../../api/plants'
+import { createPlant } from '../../api/myplants'
 import { useNavigate } from 'react-router-dom'
 import { createPlantSuccess, createPlantFailure } from '../shared/AutoDismissAlert/messages'
 import PlantForm from '../shared/PlantForm'
@@ -10,7 +10,7 @@ const CreatePlant = (props) => {
 
     const navigate = useNavigate()
 
-    const [plant, setPlant] = useState({
+    const [myPlant, setPlant] = useState({
         name: '',
         description: '',
         light: '',
@@ -20,7 +20,7 @@ const CreatePlant = (props) => {
         image: ''
     })
 
-    console.log('this is plant in createPlant', plant)
+    console.log('this is myPlant in createPlant', myPlant)
 
     const handleChange = (e) => {
         setPlant(prevPlant => {
@@ -56,9 +56,9 @@ const CreatePlant = (props) => {
         // e equals the event
         e.preventDefault()
 
-        createPlant(user, plant)
-            // if we're successful, navigate to the show page for the new plant
-            .then(res => { navigate(`/plants/${res.data.plant._id}`)})
+        createPlant(user, myPlant)
+            // if we're successful, navigate to the show page for the new myPlant
+            .then(res => { navigate(`/greenhome/myplants${res.data.myPlant._id}`)})
             // send a success message to the user
             .then(() => {
                 msgAlert({
@@ -79,10 +79,10 @@ const CreatePlant = (props) => {
 
     return (
         <PlantForm 
-            plant={ plant } 
+            myPlant={ myPlant } 
             handleChange={ handleChange }
             handleSubmit={ handleSubmit }
-            heading="Add a new plant!"
+            heading="Add a new myPlant!"
         />
     )
 }
