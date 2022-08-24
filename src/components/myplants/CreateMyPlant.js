@@ -1,7 +1,9 @@
 import { useState } from 'react'
+<<<<<<<< HEAD:src/components/my_plants/CreateMyPlant.js
 import { createPlant } from '../../api/my_plants'
+========
 import { createPlant } from '../../api/myplants'
-components/myplants/CreateMyPlant.js
+>>>>>>>> 06dc16263ea82b96ed34bd8621e137daffee7f05:src/components/myplants/CreateMyPlant.js
 import { useNavigate } from 'react-router-dom'
 import { createPlantSuccess, createPlantFailure } from '../shared/AutoDismissAlert/messages'
 import PlantForm from '../shared/PlantForm'
