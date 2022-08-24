@@ -14,10 +14,11 @@ export const getAllMyPlants = (user) => {
 }
 
 // READ => SHOW
-export const getOneMyPlant = (user, id, plant) => {
-    console.log("plant id +++++++++++++", id)
+export const getOneMyPlant = (myplantId, user) => {
+    // console.log("plant id +++++++++++++", id)
+    console.log("===============+++++", myplantId)
     return axios({
-		url: apiUrl + `/greenhome/myplants/${plant._id}`,
+		url: apiUrl + `/greenhome/myplants/${myplantId}`,
 		method: 'GET',
 		headers: {
 			Authorization: `Bearer ${user.token}`,
