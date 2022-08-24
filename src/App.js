@@ -14,6 +14,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import ShowPlant from './components/plants/ShowPlant'
 import PlantForm from './components/shared/PlantForm'
 import CreateMyPlant from './components/myplants/CreateMyPlant'
+import MyPlantsIndex from './components/myplants/MyPlantsIndex'
 const App = () => {
 const [user, setUser] = useState(null)
 const [msgAlerts, setMsgAlerts] = useState([])
@@ -72,6 +73,14 @@ const msgAlert = ({ heading, message, variant }) => {
                 <Route
                     path="/greenhome/:id"
                     element={ <ShowPlant user={ user } msgAlert={ msgAlert } />}
+                />
+                <Route
+                    path="/greenhome/myplants"
+                    element={
+                        <RequireAuth user={ user }>
+                            <MyPlantsIndex msgAlert={msgAlert} user={user} myPlants={myPlants}/>
+                        </RequireAuth>
+                    }
                 />
                 <Route
                     path="/greenhome/addplant"

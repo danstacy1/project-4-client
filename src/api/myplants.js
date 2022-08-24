@@ -2,14 +2,27 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // READ => INDEX
-export const getAllMyPlants = () => {
-    return axios(`${apiUrl}/greenhome/myplants`)
+export const getAllMyPlants = (user) => {
+    console.log('this is user', user)
+    return axios({
+		url: apiUrl + '/greenhome/myplants',
+		method: 'GET',
+		headers: {
+			Authorization: `Bearer ${user.token}`,
+		},
+    })
 }
 
 // READ => SHOW
-export const getOneMyPlant = (id) => {
+export const getOneMyPlant = (user, id, plant) => {
     console.log("plant id +++++++++++++", id)
-    return axios(`${apiUrl}/greenhome/myplants/${id}`)
+    return axios({
+		url: apiUrl + `/greenhome/myplants/${plant._id}`,
+		method: 'GET',
+		headers: {
+			Authorization: `Bearer ${user.token}`,
+		},
+    })
 }
 
 // CREATE
@@ -19,7 +32,6 @@ export const createPlant = (user, newPlant) => {
     // when we pass that object into the api createPlant function,
     // it's going to look like the plants in our database
     // we're going to refer to this as newPlant
-    console.log('this is user', user)
     console.log('this is newPlant', newPlant)
 	return axios({
 		url: apiUrl + '/greenhome/myplants',
