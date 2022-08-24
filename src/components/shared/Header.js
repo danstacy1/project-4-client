@@ -19,17 +19,15 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
-<<<<<<< HEAD
             <Link to="/greenhome/myplants" style={ linkStyle }>
                 My Plants
             </Link>
         </Nav.Item>
-=======
+		<Nav.Item>
 			<Link to='/greenhome/addplant' style={linkStyle}>
 				Create A Plant 
 			</Link>
 		</Nav.Item>
->>>>>>> 06dc16263ea82b96ed34bd8621e137daffee7f05
 	</>
 )
 
@@ -58,11 +56,7 @@ const Header = ({ user }) => (
 	<Navbar bg='success' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-<<<<<<< HEAD
                 Green Home
-=======
-                Welcome to Green Home
->>>>>>> 06dc16263ea82b96ed34bd8621e137daffee7f05
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
