@@ -15,11 +15,11 @@ import ChangePassword from './components/auth/ChangePassword'
 import ShowPlant from './components/plants/ShowPlant'
 import PlantForm from './components/shared/PlantForm'
 
-import CreatePlant from './components/my_plants/CreateMyPlant'
+
 import MyPlantsIndex from './components/my_plants/MyPlantsIndex'
-=======
+
 import CreateMyPlant from './components/myplants/CreateMyPlant'
->>>>>>> 06dc16263ea82b96ed34bd8621e137daffee7f05
+
 
 const App = () => {
 
@@ -174,7 +174,7 @@ const handleRemoveClick = (plant) => {
 					path="/greenhome/addplant"
 					element={
 						<RequireAuth user={ user }>
-<<<<<<< HEAD
+
 							<CreatePlant msgAlert={msgAlert} user={user} myPlants={ myPlants }/>
 						</RequireAuth>  
 					}
@@ -182,14 +182,15 @@ const handleRemoveClick = (plant) => {
 				<Route
 					path='/greenhome/myplants'
 					element={
-						<MyPlantsIndex 
-						msgAlert={msgAlert} clearUser={clearUser} user={user} 
-						handleMyPlantClick={handleMyPlantClick} myPlants={ myPlants } 
-						handleRemoveClick={handleRemoveClick}/>							
-=======
+						<RequireAuth> 
+							<MyPlantsIndex 
+							msgAlert={msgAlert} clearUser={clearUser} user={user} 
+							handleMyPlantClick={handleMyPlantClick} myPlants={ myPlants } 
+							handleRemoveClick={handleRemoveClick}/>							
+
 							<CreateMyPlant msgAlert={msgAlert} user={user} myPlants={myPlants}/>
 						</RequireAuth>  
->>>>>>> 06dc16263ea82b96ed34bd8621e137daffee7f05
+
 					}
 				/>
 				</Routes>
