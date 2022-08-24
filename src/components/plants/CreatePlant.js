@@ -3,7 +3,7 @@ import { createPlant } from '../../api/plants'
 import { useNavigate } from 'react-router-dom'
 import { createPlantSuccess, createPlantFailure } from '../shared/AutoDismissAlert/messages'
 import PlantForm from '../shared/PlantForm'
-
+f
 const CreatePlant = (props) => {
     console.log('these are the props in createPlant\n', props)
     const { user, msgAlert } = props
