@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import { createPlant } from '../../api/my_plants'
 import { createPlant } from '../../api/myplants'
-components/myplants/CreateMyPlant.js
 import { useNavigate } from 'react-router-dom'
 import { createPlantSuccess, createPlantFailure } from '../shared/AutoDismissAlert/messages'
 import PlantForm from '../shared/PlantForm'
