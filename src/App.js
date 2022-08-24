@@ -14,7 +14,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowPlant from './components/plants/ShowPlant'
 import PlantForm from './components/shared/PlantForm'
-<<<<<<< HEAD
+
 import CreatePlant from './components/my_plants/CreateMyPlant'
 import MyPlantsIndex from './components/my_plants/MyPlantsIndex'
 =======
