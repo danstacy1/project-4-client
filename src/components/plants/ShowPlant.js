@@ -52,6 +52,12 @@ const ShowPlant = (props) => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
+                {/* button only visible if signed in */}
+                {/* set up button to create plant */}
+                {/* import createplant function from myplants api */}
+                {/* add handleAddPlant above */}
+                {/* bring user in as prop */}
+                <Button></Button>
             </Container>
         </>
     )

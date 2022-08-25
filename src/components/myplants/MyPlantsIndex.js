@@ -19,18 +19,18 @@ justifyContent: 'center'
 }
 
 const MyPlantsIndex = (props) => {
-const [myplants, setMyPlants] = useState(null)
+const [plants, setPlants] = useState(null)
 const [error, setError] = useState(false)
 
-const { user, msgAlert, myplant } = props
+const { user, msgAlert, plant } = props
 
 console.log('Props in PlantsIndex', props)
-console.log('MPIndex', myplants)
+console.log('MPIndex', plants)
 
 useEffect(() => {
     // console.log(props)
     getAllMyPlants(user)
-        .then(res => setMyPlants(res.data.myplants))
+        .then(res => setPlants(res.data.plants))
         .catch(err => {
             msgAlert({
                 heading: 'Error Getting Plants',
@@ -40,31 +40,31 @@ useEffect(() => {
             setError(true)
         })    
     }, [])
-    // console.log('++++++', myPlants)
+    // console.log('++++++', Plants)
     if (error) {
         return <p>Error!</p>
     }
 
     // If plants haven't been loaded yet, show a loading message
-    if (!myplants) {
+    if (!plants) {
         return <LoadingScreen />
-    } else if (myplants.length === 0) {
+    } else if (plants.length === 0) {
         return <p>No plants yet. Better add some.</p>
     }
     
     // <>
     let myPlantCards
     console.log('user._id in MPIndex', user._id)
-    console.log('++++++', myplants)
-    if (myplants) {
-        myPlantCards = myplants.map(myplant => (
+    console.log('++++++', plants)
+    if (plants) {
+        myPlantCards = plants.map(plant => (
         // console.log('user in MPIndex', user)
-        <Card style={{ width: '30%', margin: 5}} key={ myplant._id }>
+        <Card style={{ width: '30%', margin: 5}} key={ plant._id }>
                 {/* console.log('user._id in MPIndex', myPlant.owner._id) */}
-                <Card.Header><Link to={`/greenhome/myplants/${myplant._id}`}> { myplant.name }</Link></Card.Header>
+                <Card.Header><Link to={`/greenhome/myplants/${plant._id}`}> { plant.name }</Link></Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        <Link to={`/greenhome/myplants/${myplant._id}`}> <img src={`${myplant.image}`} height="200" width="auto" /></Link>
+                        <Link to={`/greenhome/myplants/${plant._id}`}> <img src={`${plant.image}`} height="200" width="auto" /></Link>
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -72,11 +72,11 @@ useEffect(() => {
     }
         // </>
         
-        console.log("====================", user, myplants)
+        console.log("====================", user, plants)
     return (
         <div style={ cardContainerStyle }>
             {/* {
-            (user && myplants)
+            (user && plants)
             ? */}
             { myPlantCards }
             {/* :

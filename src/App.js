@@ -21,7 +21,7 @@ import EditMyPlantModal from './components/myplants/EditMyPlantModal'
 const App = () => {
 const [user, setUser] = useState(null)
 const [msgAlerts, setMsgAlerts] = useState([])
-const [myPlants, setMyPlants] = useState([])
+const [plants, setPlants] = useState([])
 console.log('user in app', user)
 console.log('message alerts', msgAlerts)
 const clearUser = () => {
@@ -81,15 +81,15 @@ const msgAlert = ({ heading, message, variant }) => {
                     path="/greenhome/myplants"
                     element={
                         <RequireAuth user={ user }>
-                            <MyPlantsIndex msgAlert={msgAlert} user={user} myPlants={myPlants}/>
+                            <MyPlantsIndex msgAlert={msgAlert} user={user} plants={plants}/>
                         </RequireAuth>
                     }
                 />
                 <Route
-                    path="/greenhome/myplants/:myplantid"
+                    path="/greenhome/myplants/:plantid"
                     element={
                         <RequireAuth user={ user }>
-                            <ShowMyPlant msgAlert={msgAlert} user={user} myPlants={myPlants}/>
+                            <ShowMyPlant msgAlert={msgAlert} user={user} plants={plants}/>
                         </RequireAuth>
                     }
                 />
@@ -97,15 +97,15 @@ const msgAlert = ({ heading, message, variant }) => {
                     path="/greenhome/addplant"
                     element={
                         <RequireAuth user={ user }>
-                            <CreateMyPlant msgAlert={msgAlert} user={user} myPlants={myPlants}/>
+                            <CreateMyPlant msgAlert={msgAlert} user={user} plants={plants}/>
                         </RequireAuth>
                     }
                 />
                 <Route
-                    path="/greenhome/myplants/:myplantid"
+                    path="/greenhome/myplants/:plantid"
                     element={
                         <RequireAuth user={ user }>
-                            <EditMyPlantModal msgAlert={msgAlert} user={user} myPlants={myPlants}/>
+                            <EditMyPlantModal msgAlert={msgAlert} user={user} plants={plants}/>
                         </RequireAuth>
                     }
                 />

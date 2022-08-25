@@ -3,7 +3,7 @@ import { Modal } from 'react-bootstrap'
 import PlantForm from '../shared/PlantForm'
 import { updatePlantSuccess, updatePlantFailure } from '../shared/AutoDismissAlert/messages'
 
-const EditMyPlantModal = (props) => {
+const EditPlantModal = (props) => {
     const { 
         user, show, handleClose, 
         updatePlant, msgAlert, triggerRefresh
@@ -72,4 +72,4 @@ const EditMyPlantModal = (props) => {
     )
 }
 
-export default EditMyPlantModal
+export default EditPlantModal

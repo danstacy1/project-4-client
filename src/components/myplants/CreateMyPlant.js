@@ -7,7 +7,7 @@ const CreatePlant = (props) => {
     // console.log('these are the props in createPlant\n', props)
     const { user, msgAlert } = props
     const navigate = useNavigate()
-    const [myPlant, setPlant] = useState({
+    const [plant, setPlant] = useState({
         name: '',
         description: '',
         light: '',
@@ -16,7 +16,7 @@ const CreatePlant = (props) => {
         poisonous: '',
         image: ''
     })
-    // console.log('this is myPlant in createPlant', myPlant)
+    // console.log('this is plant in createPlant', plant)
     const handleChange = (e) => {
         setPlant(prevPlant => {
             let updatedValue = e.target.value
@@ -35,9 +35,9 @@ const CreatePlant = (props) => {
     const handleSubmit = (e) => {
         // e equals the event
         e.preventDefault()
-        createPlant(user, myPlant)
-            // if we're successful, navigate to the show page for the new myPlant
-            .then(res => { navigate(`/greenhome/myplants/${res.data.myPlant._id}`)})
+        createPlant(user, plant)
+            // if we're successful, navigate to the show page for the new plant
+            .then(res => { navigate(`/greenhome/myplants/${res.data.plant._id}`)})
             // send a success message to the user
             .then(() => {
                 msgAlert({
@@ -57,10 +57,10 @@ const CreatePlant = (props) => {
     }
     return (
         <PlantForm
-            myPlant={ myPlant }
+            plant={ plant }
             handleChange={ handleChange }
             handleSubmit={ handleSubmit }
-            heading="Add a new myPlant!"
+            heading="Add a new plant!"
         />
     )
 }

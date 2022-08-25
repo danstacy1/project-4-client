@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap'
 
 const PlantForm = (props) => {
-    const { myPlant, handleChange, heading, handleSubmit } = props
+    const { plant, handleChange, heading, handleSubmit } = props
 
     return (
         <Container className="justify-content-center">
@@ -16,7 +16,7 @@ const PlantForm = (props) => {
                     placeholder="Type of plant"
                     name="name"
                     id="name"
-                    value={ myPlant.name }
+                    value={ plant.name }
                     onChange={ handleChange }
                 />
                 <Form.Label htmlFor="description">Description</Form.Label>
@@ -24,7 +24,7 @@ const PlantForm = (props) => {
                     placeholder="Description of the plant"
                     name="description"
                     id="description"
-                    value={ myPlant.description }
+                    value={ plant.description }
                     onChange={ handleChange }
                 />
                 <Form.Label htmlFor="light">Light</Form.Label>
@@ -33,7 +33,7 @@ const PlantForm = (props) => {
                     type="text"
                     name="light"
                     id="light"
-                    value={ myPlant.light }
+                    value={ plant.light }
                     onChange={ handleChange }
                 />
                 <Form.Label htmlFor="water">Water</Form.Label>
@@ -42,7 +42,7 @@ const PlantForm = (props) => {
                     type="text"
                     name="water"
                     id="water"
-                    value={ myPlant.water }
+                    value={ plant.water }
                     onChange={ handleChange }
                 />
                 <Form.Label htmlFor="temperature">Temperature</Form.Label>
@@ -51,7 +51,7 @@ const PlantForm = (props) => {
                     type="text"
                     name="temperature"
                     id="temperature"
-                    value={ myPlant.temperature }
+                    value={ plant.temperature }
                     onChange={ handleChange }
                 />
                 <Form.Label htmlFor="poisonous">Poisonous</Form.Label>
@@ -60,7 +60,7 @@ const PlantForm = (props) => {
                     type="text"
                     name="poisonous"
                     id="poisonous"
-                    value={ myPlant.poisonous }
+                    value={ plant.poisonous }
                     onChange={ handleChange }
                 />
                 <Form.Label htmlFor="image">Image</Form.Label>
@@ -69,7 +69,7 @@ const PlantForm = (props) => {
                     type="text"
                     name="image"
                     id="image"
-                    value={ myPlant.image }
+                    value={ plant.image }
                     onChange={ handleChange }
                 />
                 <Button type="submit">Submit</Button>

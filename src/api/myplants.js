@@ -14,11 +14,11 @@ export const getAllMyPlants = (user) => {
 }
 
 // READ => SHOW
-export const getOneMyPlant = (user, myplantId) => {
+export const getOneMyPlant = (user, plantId) => {
     // console.log("plant id +++++++++++++", id)
-    // console.log("===============+++++", myplantId)
+    console.log("===============+++++", plantId)
     return axios({
-		url: apiUrl + `/greenhome/myplants/${myplantId}`,
+		url: apiUrl + `/greenhome/myplants/${plantId}`,
 		method: 'GET',
 		headers: {
 			Authorization: `Bearer ${user.token}`,
@@ -45,7 +45,7 @@ export const createPlant = (user, newPlant) => {
 }
 
 // UPDATE
-export const updateMyPlant = (updatedPlant, user) => {
+export const updatePlant = (user, updatedPlant ) => {
     // console.log('createPlant in api was hit')
     // in our createplant form, we're building an object
     // when we pass that object into the api createPlant function,
@@ -54,7 +54,7 @@ export const updateMyPlant = (updatedPlant, user) => {
     // console.log('this is user', user)
     console.log('this is updatedPlant', updatedPlant)
 	return axios({
-		url: `${apiUrl}/greenhome/myplants/${updatedPlant}`,
+		url: `${apiUrl}/greenhome/myplants/${updatedPlant._id}`,
 		method: 'PATCH',
 		headers: {
 			Authorization: `Token token=${user.token}`,
@@ -64,10 +64,10 @@ export const updateMyPlant = (updatedPlant, user) => {
 }
 
 // DELETE
-export const removeMyPlant = (user, myplantId) => {
+export const removePlant = (user, plantId) => {
     console.log('this is the delete route user', user)
     return axios({
-        url: `${apiUrl}/greenhome/myplants/${myplantId}`,
+        url: `${apiUrl}/greenhome/myplants/${plantId}`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${user.token}`,
