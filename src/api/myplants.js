@@ -28,6 +28,17 @@ export const getOneMyPlant = (user, plantId) => {
 
 // CREATE
 export const createPlant = (user, newPlant) => {
+    if (newPlant._id){
+        newPlant = {
+            name: newPlant.name,
+            description: newPlant.description,
+            light: newPlant.light,
+            water: newPlant.water,
+            temperature: newPlant.temperature,
+            poisoneous: newPlant.poisoneous,
+            image: newPlant.image
+        }
+    }
     // console.log('createPlant in api was hit')
     // in our createplant form, we're building an object
     // when we pass that object into the api createPlant function,

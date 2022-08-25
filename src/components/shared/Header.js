@@ -23,7 +23,7 @@ const authenticatedOptions = (
                 My Plants
             </Link>
         </Nav.Item>
-		<Nav.Item>
+		<Nav.Item className='m-2'>
 			<Link to='/greenhome/addplant' style={linkStyle}>
 				Create A Plant 
 			</Link>
@@ -34,10 +34,10 @@ const authenticatedOptions = (
 const unauthenticatedOptions = (
 	<>
         <Nav.Item className='m-2'>
-		    <Link to='sign-up' style={linkStyle}>Sign Up</Link>
+			<Link to='sign-up' style={linkStyle}>Sign Up</Link>
         </Nav.Item>
         <Nav.Item className='m-2'>
-		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
+			<Link to='sign-in' style={linkStyle}>Sign In</Link>
         </Nav.Item>
 	</>
 )
