@@ -42,7 +42,7 @@ const SignIn = (props) => {
 					variant: 'success',
 				})
 			)
-			.then(() => navigate('/greenhome/addplant'))
+			.then(() => navigate('/greenhome/myplants'))
 			.catch((error) => {
                 setEmail('')
                 setPassword('')

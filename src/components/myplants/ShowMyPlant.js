@@ -4,10 +4,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 // useNavigate will allow us to navigate to a specific page
 import { Container, Card, Button } from 'react-bootstrap'
 import LoadingScreen from '../shared/LoadingScreen'
-import { getOneMyPlant, updateMyPlant } from '../../api/myplants'
+import { getOneMyPlant, updateMyPlant, removeMyPlant } from '../../api/myplants'
 import messages from '../shared/AutoDismissAlert/messages'
 import EditMyPlantModal from './EditMyPlantModal'
-
 
 
 // We need to get the plant's id from the parameters
@@ -30,7 +29,7 @@ const ShowMyPlant = (props) => {
     // destructuring to get the id value from our route parameters
     // console.log("-----------------------", res.data.myplant)
     useEffect(() => {
-        getOneMyPlant(myplantid, user)
+        getOneMyPlant(user, myplantid)
             .then(res => setMyPlant(res.data.myplant))
             .catch(err => {
                 msgAlert({
@@ -42,6 +41,31 @@ const ShowMyPlant = (props) => {
                 //navigate back to the home page if there's an error fetching
             })
     }, [updated])
+
+    // here we'll declare a function that runs which will remove the myplant
+    // this function's promise chain should send a message, and then go somewhere
+    const removeThePlant = () => {
+        removeMyPlant(user, myplant._id)
+            // on success send a success message
+            .then(() => {
+                msgAlert({
+                    heading: 'Success',
+                    message: messages.removePlantSuccess,
+                    variant: 'success'
+                })
+            })
+            // then navigate to index
+            .then(() => {navigate('/greenhome/myplants')})
+            // on failure send a failure message
+            .catch(err => {                   
+                msgAlert({
+                    heading: 'Error removing plant',
+                    message: messages.removePlantFailure,
+                    variant: 'danger'
+                })
+            })
+    }
+
     if (!myplant) {
         return <LoadingScreen />
     }
@@ -72,12 +96,12 @@ const ShowMyPlant = (props) => {
                                 >
                                     Edit Plant
                                 </Button>
-                                {/* <Button onClick={() => removeThePlant()}
+                                <Button onClick={() => removeThePlant()}
                                     className="m-2"
                                     variant="danger"
                                 >
-                                    Set {plant.name} Free
-                                </Button> */}
+                                    Delete {myplant.name}
+                                </Button>
                             </>
                             :
                             null
