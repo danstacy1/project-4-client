@@ -45,7 +45,7 @@ export const createPlant = (user, newPlant) => {
 }
 
 // UPDATE
-export const updatePlant = (user, updatedPlant) => {
+export const updateMyPlant = (updatedPlant, user) => {
     // console.log('createPlant in api was hit')
     // in our createplant form, we're building an object
     // when we pass that object into the api createPlant function,
@@ -54,7 +54,7 @@ export const updatePlant = (user, updatedPlant) => {
     // console.log('this is user', user)
     console.log('this is updatedPlant', updatedPlant)
 	return axios({
-		url: `${apiUrl}/greenhome/myplants/${updatedPlant._id}`,
+		url: `${apiUrl}/greenhome/myplants/${updatedPlant}`,
 		method: 'PATCH',
 		headers: {
 			Authorization: `Token token=${user.token}`,

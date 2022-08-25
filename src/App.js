@@ -12,10 +12,11 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowPlant from './components/plants/ShowPlant'
-import PlantForm from './components/shared/PlantForm'
 import CreateMyPlant from './components/myplants/CreateMyPlant'
 import MyPlantsIndex from './components/myplants/MyPlantsIndex'
+import PlantForm from './components/shared/PlantForm'
 import ShowMyPlant from './components/myplants/ShowMyPlant'
+import EditMyPlantModal from './components/myplants/EditMyPlantModal'
 
 const App = () => {
 const [user, setUser] = useState(null)
@@ -97,6 +98,14 @@ const msgAlert = ({ heading, message, variant }) => {
                     element={
                         <RequireAuth user={ user }>
                             <CreateMyPlant msgAlert={msgAlert} user={user} myPlants={myPlants}/>
+                        </RequireAuth>
+                    }
+                />
+                <Route
+                    path="/greenhome/myplants/:myplantid"
+                    element={
+                        <RequireAuth user={ user }>
+                            <EditMyPlantModal msgAlert={msgAlert} user={user} myPlants={myPlants}/>
                         </RequireAuth>
                     }
                 />
