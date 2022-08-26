@@ -18,6 +18,7 @@ import PlantForm from './components/shared/PlantForm'
 import ShowMyPlant from './components/myplants/ShowMyPlant'
 import EditMyPlantModal from './components/myplants/EditMyPlantModal'
 
+
 const App = () => {
 const [user, setUser] = useState(null)
 const [msgAlerts, setMsgAlerts] = useState([])
@@ -43,6 +44,8 @@ const msgAlert = ({ heading, message, variant }) => {
 }
     return (
         <Fragment>
+            
+
             <Header user={user} />
             <Routes>
                 <Route
@@ -53,6 +56,7 @@ const msgAlert = ({ heading, message, variant }) => {
                 />
                 <Route
                     path='/sign-up'
+                    
                     element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
                 />
                 <Route
