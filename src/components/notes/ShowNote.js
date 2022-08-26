@@ -13,7 +13,7 @@ const ShowNote = (props) => {
 
     // calls this to destroy a toy
     const destroyNote = () => {
-        delete(user, plant._id, note._id)
+        deleteNote(user, plant._id, note._id)
             .then(() => 
                 msgAlert({
                     heading: 'Note Deleted',
@@ -33,12 +33,6 @@ const ShowNote = (props) => {
         <>
             <Card>
                 <Card.Header>{note.note}</Card.Header>
-                {/* <Card.Body>
-                    <small>{toy.description}</small><br/>
-                    <small>
-                        {toy.isSqueaky ? 'squeak squeak' : 'stoic silence'}
-                    </small>
-                </Card.Body> */}
                 <Card.Footer>
                     {/* <small>Condition: {toy.condition}</small><br/>
                     {
@@ -58,8 +52,8 @@ const ShowNote = (props) => {
                                 Delete Note
                             </Button>
                         </>
-                        :
-                        null
+                        {/* :
+                        null */}
                     {/* } */}
                 </Card.Footer>
             </Card>

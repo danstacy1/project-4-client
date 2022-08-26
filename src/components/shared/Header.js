@@ -9,13 +9,8 @@ const linkStyle = {
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2'>
-			<Link to='change-password' style={linkStyle}>
-				Change Password
-			</Link>
-		</Nav.Item>
-		<Nav.Item className='m-2'>
-			<Link to='sign-out' style={linkStyle}>
-				Sign Out
+			<Link to='/greenhome/addplant' style={linkStyle}>
+				Create A Plant 
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
@@ -24,8 +19,13 @@ const authenticatedOptions = (
             </Link>
         </Nav.Item>
 		<Nav.Item className='m-2'>
-			<Link to='/greenhome/addplant' style={linkStyle}>
-				Create A Plant 
+			<Link to='change-password' style={linkStyle}>
+				Change Password
+			</Link>
+		</Nav.Item>
+		<Nav.Item className='m-2'>
+			<Link to='sign-out' style={linkStyle}>
+				Sign Out
 			</Link>
 		</Nav.Item>
 	</>

@@ -14,6 +14,14 @@ import ShowNote from '../notes/ShowNote'
 // We need to get the plant's id from the parameters
 // Then we need to make a request to the api
 // Then we need to display the results in this component
+
+const cardContainerLayout = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexFlow: 'row wrap'
+}
+
+
 const ShowMyPlant = (props) => {
     const [plant, setPlant] = useState(null)
     const { plantid } = useParams()
@@ -69,21 +77,21 @@ const ShowMyPlant = (props) => {
             })
     }
 
-    // let noteCards
-    // if (plant) {
-    //     if (plant.notes.length > 0) {
-    //         noteCards = plant.notes.map(note => (
-    //             <ShowNote 
-    //                 key={note._id}
-    //                 note={note}
-    //                 plant={plant}
-    //                 user={user}
-    //                 msgAlert={msgAlert}
-    //                 triggerRefresh={() => setUpdated(prev => !prev)}
-    //             />
-    //         ))
-    //     }
-    // }
+    let noteCards
+    if (plant) {
+        if (plant.notes.length > 0) {
+            noteCards = plant.notes.map(note => (
+                <ShowNote 
+                    key={note._id}
+                    note={note}
+                    plant={plant}
+                    user={user}
+                    msgAlert={msgAlert}
+                    triggerRefresh={() => setUpdated(prev => !prev)}
+                />
+            ))
+        }
+    }
 
     if (!plant) {
         return <LoadingScreen />
@@ -132,6 +140,9 @@ const ShowMyPlant = (props) => {
                         }
                     </Card.Footer>
                 </Card>
+            </Container>
+            <Container style={cardContainerLayout}>
+                {noteCards}
             </Container>
             <EditPlantModal 
                 user={user}
