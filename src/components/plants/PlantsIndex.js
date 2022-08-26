@@ -19,6 +19,7 @@ const [error, setError] = useState(false)
 const { msgAlert } = props
 // console.log('Props in PlantsIndex', props)
 useEffect(() => {
+    console.log('owner in useefect', plants)
     // console.log(props)
     getAllPlants()
         .then(res => setPlants(res.data.plants))
@@ -41,7 +42,12 @@ useEffect(() => {
     } else if (plants.length === 0) {
         return <p>No plants yet. Better add some.</p>
     }
-    const plantCards = plants.map(plant => (
+    // console.log('plants.owner in plantsindex ===', plants.owner)
+    // console.log('plants in plantsindex ===', plants)
+
+    const seededPlants = plants.filter(plants => plants.isSeeded === true)
+
+    const plantCards = seededPlants.map(plant => (
         <Card style={{ width: '30%', margin: 5}} key={ plant._id }>
             <Card.Header><Link to={`/greenhome/${plant._id}`}> { plant.name }</Link></Card.Header>
             <Card.Body>
@@ -51,10 +57,12 @@ useEffect(() => {
             </Card.Body>
         </Card>
     ))
+    
     return (
         <div style={ cardContainerStyle }>
             { plantCards }
         </div>
     )
+
 }
 export default PlantsIndex

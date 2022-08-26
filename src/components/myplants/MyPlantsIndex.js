@@ -24,8 +24,8 @@ const [error, setError] = useState(false)
 
 const { user, msgAlert, plant } = props
 
-console.log('Props in PlantsIndex', props)
-console.log('MPIndex', plants)
+// console.log('Props in PlantsIndex', props)
+// console.log('MPIndex', plants)
 
 useEffect(() => {
     // console.log(props)
