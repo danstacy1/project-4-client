@@ -142,16 +142,25 @@ const ShowPlant = (props) => {
                     defaultValue={ plant.image }
                     hidden
                 />
-                <Button type="submit">Add { plant.name } To My Garden</Button>
-            </Form>
-                            <div><small><img src={`${plant.image}`}></img></small></div>
-                            <div><small>Description: { plant.description }</small></div>
-                            <div><small>Light: { plant.light }</small></div>
-                            <div><small>Water: { plant.water }</small></div>
-                            <div><small>Temperature: { plant.temperature }</small></div>
-                            <div><small>Poisonous: { plant.poisonous }</small></div>
-                        </Card.Text>
-                    </Card.Body>
+                {
+                    user
+                    ?
+                    <>
+                    <Button type="submit">Add { plant.name } To My Garden</Button>
+                    </>
+                    :
+                    null
+                }
+                    </Form>
+                    <br></br>
+                    <div><small><img src={`${plant.image}`}></img></small></div>
+                    <div><small>Description: { plant.description }</small></div>
+                    <div><small>Light: { plant.light }</small></div>
+                    <div><small>Water: { plant.water }</small></div>
+                    <div><small>Temperature: { plant.temperature }</small></div>
+                    <div><small>Poisonous: { plant.poisonous }</small></div>
+            </Card.Text>
+            </Card.Body>
                 </Card>
             </Container>
             {/* <CopyPlantModal 
