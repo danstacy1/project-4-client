@@ -7,6 +7,8 @@ import LoadingScreen from '../shared/LoadingScreen'
 import { getOneMyPlant, updatePlant, removePlant } from '../../api/myplants'
 import messages from '../shared/AutoDismissAlert/messages'
 import EditPlantModal from './EditMyPlantModal'
+import NewNoteModal from '../notes/NewNoteModal'
+import ShowNote from '../notes/ShowNote'
 
 
 // We need to get the plant's id from the parameters
@@ -14,15 +16,15 @@ import EditPlantModal from './EditMyPlantModal'
 // Then we need to display the results in this component
 const ShowMyPlant = (props) => {
     const [plant, setPlant] = useState(null)
-    const [ editModalShow, setEditModalShow ] = useState(false)
     const { plantid } = useParams()
-    const [ updated, setUpdated ] = useState(false)
+    const navigate = useNavigate()
+    const [editModalShow, setEditModalShow] = useState(false)
+    const [noteModalShow, setNoteModalShow] = useState(false)
+    const [updated, setUpdated] = useState(false)
     
     console.log("This is the IDDDDDDD", plantid)
     console.log("what is this?", useParams())
     // console.log("here are the props", props)
-    const navigate = useNavigate()
-    // useNavigate returns a function
     // we can call that function to redirect the user wherever we want to
     const { msgAlert, user } = props
     // console.log('user in props', user)
@@ -67,6 +69,22 @@ const ShowMyPlant = (props) => {
             })
     }
 
+    // let noteCards
+    // if (plant) {
+    //     if (plant.notes.length > 0) {
+    //         noteCards = plant.notes.map(note => (
+    //             <ShowNote 
+    //                 key={note._id}
+    //                 note={note}
+    //                 plant={plant}
+    //                 user={user}
+    //                 msgAlert={msgAlert}
+    //                 triggerRefresh={() => setUpdated(prev => !prev)}
+    //             />
+    //         ))
+    //     }
+    // }
+
     if (!plant) {
         return <LoadingScreen />
     }
@@ -103,6 +121,11 @@ const ShowMyPlant = (props) => {
                                 >
                                     Delete {plant.name}
                                 </Button>
+                                <Button onClick={() => setNoteModalShow(true)}
+                                    className="m-2" variant="info"
+                                >
+                                    Leave A Note!
+                                </Button>
                             </>
                             :
                             null
@@ -118,6 +141,14 @@ const ShowMyPlant = (props) => {
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 handleClose={() => setEditModalShow(false)} 
+            />
+            <NewNoteModal 
+                plant={plant}
+                show={noteModalShow}
+                user={user}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated(prev => !prev)}
+                handleClose={() => setNoteModalShow(false)} 
             />
         </>
     )
