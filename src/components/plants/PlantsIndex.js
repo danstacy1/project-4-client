@@ -42,7 +42,10 @@ useEffect(() => {
     } else if (plants.length === 0) {
         return <p>No plants yet. Better add some.</p>
     }
-    const plantCards = plants.map(plant => (
+
+    const seededPlants = plants.filter(plants => plants.isSeeded === true)
+
+    const plantCards = seededPlants.map(plant => (
         <Card style={{ width: '30%', margin: 5}} key={ plant._id }>
             <Card.Header><Link to={`/greenhome/${plant._id}`}> { plant.name }</Link></Card.Header>
             <Card.Body>
