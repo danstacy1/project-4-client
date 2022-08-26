@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllPlants } from '../../api/plants'
 import messages from '../shared/AutoDismissAlert/messages'
+import '../../style.css'
 // PlantsIndex should make a request to the api
 // To get all plants
 // Then display them when it gets them
@@ -11,7 +12,8 @@ import messages from '../shared/AutoDismissAlert/messages'
 const cardContainerStyle = {
 display: 'flex',
 flexFlow: 'row wrap',
-justifyContent: 'center'
+justifyContent: 'center',
+backgroundImage: "url('https://t4.ftcdn.net/jpg/03/64/44/51/360_F_364445183_4sG0xrQiEA0OreDQkee3yLD1ak26CWL6.jpg')"
 }
 const PlantsIndex = (props) => {
 const [plants, setPlants] = useState(null)
@@ -46,11 +48,14 @@ useEffect(() => {
     const seededPlants = plants.filter(plants => plants.isSeeded === true)
 
     const plantCards = seededPlants.map(plant => (
-        <Card style={{ width: '30%', margin: 5}} key={ plant._id }>
+        <Card style={{ width: '15%', margin: 5}} key={ plant._id }class="cards" >
             <Card.Header><Link to={`/greenhome/${plant._id}`}> { plant.name }</Link></Card.Header>
             <Card.Body>
                 <Card.Text>
-                    <Link to={`/greenhome/${plant._id}`}> <img src={`${plant.image}`} height="200" width="auto" /></Link>
+                    <Link to={`/greenhome/${plant._id}`}> 
+                    <center><img src={`${plant.image}`}  width="100%" height="auto" /></center>
+                    </Link>
+                    
                 </Card.Text>
             </Card.Body>
         </Card>
