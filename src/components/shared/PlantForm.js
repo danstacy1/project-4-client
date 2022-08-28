@@ -8,8 +8,8 @@ const PlantForm = (props) => {
     const { plant, handleChange, heading, handleSubmit } = props
 
     return (
-        <Container className="justify-content-center">
-            {/* <h3>{heading}</h3> */}
+        <Container className="justify-content-center bg-secondary text-white" >
+            <h3>{heading}</h3>
             <Form onSubmit={handleSubmit}>
                 <Form.Label htmlFor="name">Name</Form.Label>
                 <Form.Control

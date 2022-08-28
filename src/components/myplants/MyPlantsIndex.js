@@ -15,7 +15,18 @@ import messages from '../shared/AutoDismissAlert/messages'
 const cardContainerStyle = {
 display: 'flex',
 flexFlow: 'row wrap',
-justifyContent: 'center'
+justifyContent: 'center',
+backgroundImage: "url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimg.freepik.com%2Ffree-photo%2Fside-border-made-with-fresh-green-leaves-white-background_23-2147893798.jpg%3Fw%3D2000')",
+backgroundPosition: 'center',
+backgroundSize: 'cover',
+width: '100vw',
+height: '100vh',
+backgroundAttachment: 'fixed',
+overflowY: 'scroll'
+}
+
+const cards = {
+    
 }
 
 const MyPlantsIndex = (props) => {
@@ -59,12 +70,12 @@ useEffect(() => {
     if (plants) {
         myPlantCards = plants.map(plant => (
         // console.log('user in MPIndex', user)
-        <Card style={{ width: '30%', margin: 5}} key={ plant._id }>
+        <Card style={{ width: '20%', margin: 10}} key={ plant._id }>
                 {/* console.log('user._id in MPIndex', myPlant.owner._id) */}
                 <Card.Header><Link to={`/greenhome/myplants/${plant._id}`}> { plant.name }</Link></Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        <Link to={`/greenhome/myplants/${plant._id}`}> <img src={`${plant.image}`} height="200" width="auto" /></Link>
+                        <Link to={`/greenhome/myplants/${plant._id}`}> <img src={`${plant.image}`} width="100%" height="auto" /></Link>
                     </Card.Text>
                 </Card.Body>
             </Card>

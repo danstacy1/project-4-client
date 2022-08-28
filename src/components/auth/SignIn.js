@@ -6,8 +6,6 @@ import messages from '../shared/AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import '../../style.css'
-import BackgroundVideo from './BackgroundVideo'
 
 const signInStyle = {
     color: "white",
@@ -63,7 +61,6 @@ const SignIn = (props) => {
 
     return (
         <>
-        <BackgroundVideo />
         <div className='row'id='sign-in'>
             <div className='col-sm col-md mx-auto mt-5' >
                 <h3 style={signInStyle}>Sign In</h3>
