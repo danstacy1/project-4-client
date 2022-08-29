@@ -10,7 +10,6 @@ const Home = (props) => {
 			listStylePosition: 'inside',
 			listStyleType: 'none',
 			fontWeight: 'bold',
-			
 		}
 
 	const backgroundImg = {
@@ -19,7 +18,8 @@ const Home = (props) => {
 		backgroundSize: 'cover',
 		width: '100vw',
 		height: '100vh',
-		backgroundAttachment: 'fixed'
+		backgroundAttachment: 'fixed',
+		backgroundColor: 'rgba(0, 0, 0, 1);'
 		
 	}
 
@@ -35,7 +35,7 @@ const Home = (props) => {
 
 			<h4>Learn more from our <a href='/greenhome'>popular plants</a> or <a href='/sign-up'>sign up</a> to create and keep track of your own garden.</h4><br></br>
 
-					<h5>If you're still on the fence about getting house plants here are some benefits.</h5>
+					<h5>If you're still on the fence about getting house plants, here are some benefits.</h5>
 						<ul style={homeListStyle}>
 						<li>Improve air quality</li>
 						<li>Reduce stress</li>

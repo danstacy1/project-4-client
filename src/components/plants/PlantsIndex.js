@@ -9,8 +9,6 @@ import { Button, Form } from 'react-bootstrap'
 import { useParams, useNavigate } from 'react-router-dom'
 import { createPlant } from '../../api/myplants'
 import { copyPlantSuccess, copyPlantFailure } from '../shared/AutoDismissAlert/messages'
-import SearchBar from '../../components/shared/SearchBar'
-
 // PlantsIndex should make a request to the api
 // To get all plants
 // Then display them when it gets them
@@ -89,13 +87,19 @@ useEffect(() => {
     }
 
     const seededPlants = plants.filter(plants => plants.isSeeded === true)
-
+ 
     const plantCards = seededPlants.map(plant => (
-        <Card style={{ width: '700px', height: '300px', margin: 30, overflowY: 'scroll'}} key={ plant._id }class="cards" >
+        <Card style={{backgroundColor: 'rgba(218, 247, 166, 0.6)', width: '800px', height: '300px',  margin: 17, overflowY: 'scroll'}} key={ plant._id }class="cards" >
             <Card.Body>
-                <Card.Text>
-                <Link to={`/greenhome/${plant._id}`}> <h3>{ plant.name }</h3></Link>
-                <Form onSubmit={handleSubmit}>
+                <Card.Text style={{display: 'flex', justifyContent: 'flex-end'}}>
+
+
+                    <Link to={`/greenhome/${plant._id}`}>
+                    <img  src={`${plant.image}`} style={{display: 'inline-block'}} width="130px" height="auto"/>
+                    </Link>
+                    <div>
+                    <Link to={`/greenhome/${plant._id}`}> <h3 style={{color:'black'}}>{ plant.name }</h3></Link>
+                    <Form onSubmit={handleSubmit}>
                 {/* <Form.Label htmlFor="name">Name</Form.Label> */}
                 <Form.Control
                     placeholder="Type of plant"
@@ -167,12 +171,8 @@ useEffect(() => {
                     null
                 }
                     </Form>
-
-                    <Link to={`/greenhome/${plant._id}`}>
-                    <img src={`${plant.image}`}  width="25%" height="auto" />
-                    </Link>
-                    <p> <br></br>{`${plant.description}`}</p>
-                    
+                    <p > <br></br>{`${plant.description}`}</p>
+                    </div>
                 </Card.Text>
             </Card.Body>
         </Card>
@@ -186,18 +186,3 @@ useEffect(() => {
 
 }
 export default PlantsIndex
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

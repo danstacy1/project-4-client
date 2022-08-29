@@ -4,6 +4,7 @@ import {useState} from 'react'
 
 function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('')
+    const [plants, setPlants] = useState(null)
     return (
     <div className="App">
         <input 
