@@ -15,6 +15,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 const cardContainerStyle = {
 display: 'flex',
 flexFlow: 'row wrap',
+flexDirection: 'column row',
 justifyContent: 'center',
 backgroundImage: "url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimg.freepik.com%2Ffree-photo%2Fside-border-made-with-fresh-green-leaves-white-background_23-2147893798.jpg%3Fw%3D2000')",
 backgroundPosition: 'center',
@@ -22,7 +23,8 @@ backgroundSize: 'cover',
 width: '100vw',
 height: '100vh',
 backgroundAttachment: 'fixed',
-overflowY: 'scroll'
+overflowY: 'scroll',
+textAlign: 'center'
 }
 
 const cards = {
@@ -85,11 +87,22 @@ useEffect(() => {
         
         console.log("====================", user, plants)
     return (
-        <div style={ cardContainerStyle }>
+        <div style= { cardContainerStyle }>
             {/* {
-            (user && plants)
+                (user && plants)
             ? */}
+            
+            <h3><u>My Garden</u></h3>
+            <div style={{
+                flexFlow: "row wrap",
+                display: "flex",
+                marginBottom: "300px",
+                marginLeft: "145px"
+                }}>
+          
             { myPlantCards }
+
+            </div>
             {/* :
             null
             } */}

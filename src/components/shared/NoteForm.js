@@ -13,7 +13,7 @@ const NoteForm = (props) => {
                     placeholder="Enter Note"
                     name="note"
                     id="note"
-                    value={ note.note }
+                    // value={ note.note }
                     onChange={ handleChange }
                 />
                 <Button type="submit">Submit</Button>

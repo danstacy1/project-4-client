@@ -29,6 +29,19 @@ const SignUp = (props) => {
 
     const navigate = useNavigate()
 
+    const cardContainerStyle = {
+        display: 'flex',
+        flexFlow: 'row wrap',
+        justifyContent: 'center',
+        backgroundImage: "url('https://wallpaperaccess.com/full/4048337.jpg')",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        width: '100vw',
+        height: '100vh',
+        backgroundAttachment: 'fixed',
+        overflowY: 'scroll'
+        }
+
 	const onSignUp = (event) => {
 		event.preventDefault()
 
@@ -61,10 +74,10 @@ const SignUp = (props) => {
 
 
     return (
-        <>
+        <div style={ cardContainerStyle }>
         <div className='row' id='sign-up'>
-            <div className='col-sm col-md mx-auto mt-5'>
-                <h3 style={signUpStyle}>Sign Up</h3>
+            <div className='col-sm-10 col-md-12 mx-auto mt-5'>
+                <center><h3>Sign Up</h3></center>
                 <Form onSubmit={onSignUp} style={signUpStyle}>
                     <Form.Group controlId='email'>
                         <Form.Control
@@ -106,9 +119,10 @@ const SignUp = (props) => {
                         Submit
                     </Button>
                 </Form>
+            <center>Already have an account? <a href='/sign-in'>sign-in</a></center>
             </div>
         </div>
-        </>
+        </div>
     )
 
 }

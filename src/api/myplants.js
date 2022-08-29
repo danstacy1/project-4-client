@@ -35,7 +35,7 @@ export const createPlant = (user, newPlant) => {
             light: newPlant.light,
             water: newPlant.water,
             temperature: newPlant.temperature,
-            poisoneous: newPlant.poisoneous,
+            poisonous: newPlant.poisonous,
             image: newPlant.image
         }
     }

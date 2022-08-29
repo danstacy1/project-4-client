@@ -11,6 +11,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import PlantsIndex from './components/plants/PlantsIndex'
 import ShowPlant from './components/plants/ShowPlant'
 import CreateMyPlant from './components/myplants/CreateMyPlant'
 import MyPlantsIndex from './components/myplants/MyPlantsIndex'
@@ -52,7 +53,7 @@ const msgAlert = ({ heading, message, variant }) => {
                     path='/' element={<Home msgAlert={msgAlert} user={user} />}
                 />
                 <Route
-                    path='/greenhome' element={<Home msgAlert={msgAlert} user={user} />}
+                    path='/greenhome' element={<PlantsIndex msgAlert={msgAlert} user={user} />}
                 />
                 <Route
                     path='/sign-up'

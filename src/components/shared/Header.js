@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom'
 
 const linkStyle = {
     color: 'white',
+	fontFamily: 'Bubblegum Sans'
 }
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2'>
             <Link to="/greenhome/myplants" style={ linkStyle }>
-                My Plants
+                My Garden
             </Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
@@ -45,11 +46,13 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
 	<>
-		<Nav.Link>
-			<Link to='/' style={linkStyle}>
-				Home
+		<Nav.Item className='m-2'>
+		{/* <Nav.Link> */}
+			<Link to='/greenhome' style={linkStyle}>
+				Popular House Plants
 			</Link>
-		</Nav.Link>
+		{/* </Nav.Link> */}
+		</Nav.Item>
 	</>
 )
 

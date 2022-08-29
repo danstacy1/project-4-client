@@ -31,8 +31,8 @@ const ShowNote = (props) => {
 
     return (
         <>
-            <Card>
-                <Card.Header>{note.note}</Card.Header>
+            <Card style={{ width: '50%', height: '100px' }}>
+                <Card.Header style={{overflowY: 'scroll'}}>{note.note}</Card.Header>
                 <Card.Footer>
                     {/* <small>Condition: {toy.condition}</small><br/>
                     {

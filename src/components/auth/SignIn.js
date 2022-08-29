@@ -11,6 +11,18 @@ const signInStyle = {
     color: "white",
     textAlign: 'center'
 }
+const cardContainerStyle = {
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'center',
+    backgroundImage: "url('https://wallpaperaccess.com/full/4048337.jpg')",
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    width: '100vw',
+    height: '100vh',
+    backgroundAttachment: 'fixed',
+    overflowY: 'scroll'
+    }
 
 const SignIn = (props) => {
 	// constructor(props) {
@@ -60,10 +72,11 @@ const SignIn = (props) => {
 	}
 
     return (
-        <>
+        <div style={ cardContainerStyle }>
+
         <div className='row'id='sign-in'>
-            <div className='col-sm col-md mx-auto mt-5' >
-                <h3 style={signInStyle}>Sign In</h3>
+            <div className='col-sm-10 col-md-12 mx-auto mt-5' >
+                <center><h3>Sign In</h3></center>
                 <Form onSubmit={onSignIn} style={signInStyle}>
                     <Form.Group controlId='email'>
                         <Form.Control
@@ -93,9 +106,10 @@ const SignIn = (props) => {
                         Submit
                     </Button>
                 </Form>
+            <center>Don't have an account? <a href='/sign-up'>sign-up</a></center>
             </div>
         </div>
-        </>
+        </div>
     )
 }
 

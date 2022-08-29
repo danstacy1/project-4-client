@@ -99,16 +99,16 @@ const ShowMyPlant = (props) => {
     return (
         <>
             <Container className="fluid">
-                <Card>
-                    <Card.Header>{ plant.name }</Card.Header>
-                    <Card.Body>
-                        <Card.Text>
-                            <div><small><img src={`${plant.image}`}></img></small></div>
-                            <div><small>Description: { plant.description }</small></div>
-                            <div><small>Light: { plant.light }</small></div>
-                            <div><small>Water: { plant.water }</small></div>
-                            <div><small>Temperature: { plant.temperature }</small></div>
-                            <div><small>Poisonous: { plant.poisonous }</small></div>
+                <Card style={{ width: '100%', height: '500px'}}>
+                    <Card.Header><h3>{ plant.name }</h3></Card.Header>
+                    <Card.Body style={{overflowY: 'scroll'}}>
+                        <Card.Text >
+                        <div><small><img src={`${plant.image}`}></img></small></div>
+                        <div><small><br></br><b>Description: </b>{ plant.description }</small></div>
+                        <div><small><br></br><b>Light: </b>{ plant.light }</small></div>
+                        <div><small><br></br><b>Water: </b>{ plant.water }</small></div>
+                        <div><small><br></br><b>Temperature: </b>{ plant.temperature }</small></div>
+                        <div><small><br></br><b>Poisonous: </b>{ plant.poisonous }</small></div>
                         </Card.Text>
 
                     </Card.Body>    
