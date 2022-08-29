@@ -18,7 +18,8 @@ import ShowNote from '../notes/ShowNote'
 const cardContainerLayout = {
     display: 'flex',
     justifyContent: 'center',
-    flexFlow: 'row wrap'
+    flexFlow: 'row wrap',
+
 }
 
 
@@ -141,7 +142,9 @@ const ShowMyPlant = (props) => {
                     </Card.Footer>
                 </Card>
             </Container>
+            <div style={{marginTop: "20px"}}>
             <Container style={cardContainerLayout}>
+
                 {noteCards}
             </Container>
             <EditPlantModal 
@@ -152,7 +155,7 @@ const ShowMyPlant = (props) => {
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 handleClose={() => setEditModalShow(false)} 
-            />
+                />
             <NewNoteModal 
                 plant={plant}
                 show={noteModalShow}
@@ -160,7 +163,8 @@ const ShowMyPlant = (props) => {
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 handleClose={() => setNoteModalShow(false)} 
-            />
+                />
+            </div>
         </>
     )
 }

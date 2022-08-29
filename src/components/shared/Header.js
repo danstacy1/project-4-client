@@ -60,7 +60,7 @@ const Header = ({ user }) => (
 	<Navbar bg='success' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-               <h3>Green Home</h3>
+               <h2>Green Home</h2>
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />

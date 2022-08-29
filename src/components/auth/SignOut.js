@@ -24,16 +24,33 @@ const SignOut = (props) => {
 			.finally(() => clearUser())
     }
 
+    const cardContainerStyle = {
+        display: 'flex',
+        flexFlow: 'row wrap',
+        justifyContent: 'center',
+        backgroundImage: "url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1138552930.jpg')",
+        opacity: "",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        width: '100vw',
+        height: '100vh',
+        backgroundAttachment: 'fixed',
+        overflowY: 'scroll'
+        }
+
+
+
     const onCancel = () => {
         navigate('/')
     }
 
 	return (
 		<>
+        <div style={ cardContainerStyle }>
             <div className='row'>
                 <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                    <h2>Are you sure you want to sign out?</h2>
-                    <small>We hate to see you go...</small><br/>
+                    <h2 style={{color: 'white'}}><b>Are you sure you want to sign out?</b></h2>
+                    <small style={{color: 'white'}}><b>We hate to see you go...</b></small><br/>
                     <ButtonGroup>
                         <Button variant='danger' onClick={onSignOut}>
                             Sign Out
@@ -44,6 +61,7 @@ const SignOut = (props) => {
                     </ButtonGroup>
                 </div>
             </div>
+        </div>
 		</>
 	)
 }

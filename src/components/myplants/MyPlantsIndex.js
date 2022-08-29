@@ -88,11 +88,9 @@ useEffect(() => {
         console.log("====================", user, plants)
     return (
         <div style= { cardContainerStyle }>
-            {/* {
-                (user && plants)
-            ? */}
+        
             
-            <h3><u>My Garden</u></h3>
+            <h3><u>My Garden{'\n'}</u></h3>
             <div style={{
                 flexFlow: "row wrap",
                 display: "flex",
@@ -103,9 +101,6 @@ useEffect(() => {
             { myPlantCards }
 
             </div>
-            {/* :
-            null
-            } */}
         </div>
     )
 }

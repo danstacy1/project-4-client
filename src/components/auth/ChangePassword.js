@@ -16,6 +16,23 @@ const ChangePassword = (props) => {
 	// 		newPassword: '',
 	// 	}
 	// }
+
+    const cardContainerStyle = {
+        display: 'flex',
+        flexFlow: 'row wrap',
+        justifyContent: 'center',
+        backgroundImage: "url('https://www.gardeningknowhow.com/wp-content/uploads/2020/03/home-office-plants.jpg')",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        width: '100vw',
+        height: '100vh',
+        backgroundAttachment: 'fixed',
+        overflowY: 'scroll'
+        }
+
+
+
+
     const [oldPassword, setOldPassword] = useState('')
     const [newPassword, setNewPassword] = useState('')
 
@@ -53,8 +70,10 @@ const ChangePassword = (props) => {
 
 
     return (
+        <div style={ cardContainerStyle }>
+
         <div className='row'>
-            <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+            <div className='col-sm-10 col-md-12 mx-auto mt-5'>
                 <h3>Change Password</h3>
                 <Form onSubmit={onChangePassword}>
                     <Form.Group controlId='oldPassword'>
@@ -66,7 +85,7 @@ const ChangePassword = (props) => {
                             type='password'
                             placeholder='Old Password'
                             onChange={e => setOldPassword(e.target.value)}
-                        />
+                            />
                     </Form.Group>
                     <Form.Group controlId='newPassword'>
                         <Form.Label>New Password</Form.Label>
@@ -77,7 +96,7 @@ const ChangePassword = (props) => {
                             type='password'
                             placeholder='New Password'
                             onChange={e => setNewPassword(e.target.value)}
-                        />
+                            />
                     </Form.Group>
                     <Button variant='primary' type='submit'>
                         Submit
@@ -85,6 +104,7 @@ const ChangePassword = (props) => {
                 </Form>
             </div>
         </div>
+     </div>
     )
 }
 

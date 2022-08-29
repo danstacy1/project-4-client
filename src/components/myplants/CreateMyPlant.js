@@ -56,12 +56,25 @@ const CreatePlant = (props) => {
             )
     }
     return (
-        <PlantForm
-            plant={ plant }
-            handleChange={ handleChange }
-            handleSubmit={ handleSubmit }
-            heading="Add a new plant!"
-        />
+        <div>
+            <div style={{marginTop: "", backgroundColor: "" }}>
+                <PlantForm
+                    plant={ plant }
+                    handleChange={ handleChange }
+                    handleSubmit={ handleSubmit }
+                    heading="Add a new plant!"
+                />
+            </div>
+            <div style={{ 
+						display: 'flex', 
+						justifyContent: 'center', 
+						alignItems: 'center'
+						}}>
+					<img src="https://img.freepik.com/premium-vector/set-flowers-pots-isolated-white-background-flat-style_201926-911.jpg?w=2000"  
+						style={{ width: "90%"}}></img>
+				</div>
+        </div>
+        
     )
 }
 export default CreatePlant

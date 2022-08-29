@@ -33,7 +33,7 @@ const SignUp = (props) => {
         display: 'flex',
         flexFlow: 'row wrap',
         justifyContent: 'center',
-        backgroundImage: "url('https://wallpaperaccess.com/full/4048337.jpg')",
+        backgroundImage: "url('https://www.nobroker.in/blog/wp-content/uploads/2022/05/Indoor-Plants-That-Every-Home-1.jpg')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         width: '100vw',

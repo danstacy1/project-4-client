@@ -9,6 +9,8 @@ import { Button, Form } from 'react-bootstrap'
 import { useParams, useNavigate } from 'react-router-dom'
 import { createPlant } from '../../api/myplants'
 import { copyPlantSuccess, copyPlantFailure } from '../shared/AutoDismissAlert/messages'
+import SearchBar from '../../components/shared/SearchBar'
+
 // PlantsIndex should make a request to the api
 // To get all plants
 // Then display them when it gets them

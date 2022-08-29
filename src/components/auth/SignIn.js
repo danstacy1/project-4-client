@@ -15,7 +15,8 @@ const cardContainerStyle = {
     display: 'flex',
     flexFlow: 'row wrap',
     justifyContent: 'center',
-    backgroundImage: "url('https://wallpaperaccess.com/full/4048337.jpg')",
+    // backgroundImage: "url('https://wallpaperaccess.com/full/4048337.jpg')",
+    backgroundImage: "url('https://gardenerspath.com/wp-content/uploads/2022/02/Best-Low-Light-Houseplants-FB.jpg)",
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     width: '100vw',
@@ -76,7 +77,7 @@ const SignIn = (props) => {
 
         <div className='row'id='sign-in'>
             <div className='col-sm-10 col-md-12 mx-auto mt-5' >
-                <center><h3>Sign In</h3></center>
+                <center><h3 style={{color: 'white'}}>Sign In</h3></center>
                 <Form onSubmit={onSignIn} style={signInStyle}>
                     <Form.Group controlId='email'>
                         <Form.Control
@@ -106,7 +107,7 @@ const SignIn = (props) => {
                         Submit
                     </Button>
                 </Form>
-            <center>Don't have an account? <a href='/sign-up'>sign-up</a></center>
+            <center style={{color: 'white'}}>Don't have an account? <a href='/sign-up'>sign-up</a></center>
             </div>
         </div>
         </div>
