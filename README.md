@@ -91,3 +91,10 @@ You probably will only need to interact with files in app/models, app/routes, an
 ### Notes
 ![](planning/Notes.jpg)
 
+## API Repo
+
+https://github.com/dangdo85/project-4-api
+
+## Deploy Link
+
+https://greenhomeplants.herokuapp.com/
