@@ -98,7 +98,7 @@ useEffect(() => {
             <Card.Body>
                 <Card.Text style={{display: 'flex', justifyContent: 'flex-end'}}>
                     <Link to={`/greenhome/${plant._id}`}>
-                    <img  src={`${plant.image}`} style={{display: 'inline-block'}} width="130px" height="auto"/>
+                    <img  src={`${plant.image}`} style={{display: 'inline-block', padding: "15px"}} width="130px" height="auto"/>
                     </Link>
                     <div>
                     <Link to={`/greenhome/${plant._id}`}> <h3 style={{color:'black'}}>{ plant.name }</h3></Link>
