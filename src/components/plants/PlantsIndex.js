@@ -51,7 +51,7 @@ useEffect(() => {
         })
     }, [])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e, plant) => {
         // e equals the event
         e.preventDefault()
         createPlant(user, plant)
@@ -87,80 +87,23 @@ useEffect(() => {
     }
 
     const seededPlants = plants.filter(plants => plants.isSeeded === true)
- 
-    const plantCards = seededPlants.map(plant => (
+    
+    const plantCards = seededPlants.map(plant => {
+        const plantCopy = {
+            ...plant, 
+        }
+        delete plantCopy._id
+        return(
         <Card style={{backgroundColor: 'rgba(218, 247, 166, 0.6)', width: '800px', height: '300px',  margin: 17, overflowY: 'scroll'}} key={ plant._id }class="cards" >
             <Card.Body>
                 <Card.Text style={{display: 'flex', justifyContent: 'flex-end'}}>
-
-
                     <Link to={`/greenhome/${plant._id}`}>
                     <img  src={`${plant.image}`} style={{display: 'inline-block'}} width="130px" height="auto"/>
                     </Link>
                     <div>
                     <Link to={`/greenhome/${plant._id}`}> <h3 style={{color:'black'}}>{ plant.name }</h3></Link>
-                    <Form onSubmit={handleSubmit}>
-                {/* <Form.Label htmlFor="name">Name</Form.Label> */}
-                <Form.Control
-                    placeholder="Type of plant"
-                    name="name"
-                    id="name"
-                    defaultValue={ plant.name }
-                    hidden
-                />
-                {/* <Form.Label htmlFor="description">Description</Form.Label> */}
-                <Form.Control
-                    placeholder="Description of the plant"
-                    name="description"
-                    id="description"
-                    defaultValue={ plant.description }
-                    hidden
-                />
-                {/* <Form.Label htmlFor="light">Light</Form.Label> */}
-                <Form.Control
-                    placeholder="Light requirement"
-                    type="text"
-                    name="light"
-                    id="light"
-                    defaultValue={ plant.light }
-                    hidden
-                />
-                {/* <Form.Label htmlFor="water">Water</Form.Label> */}
-                <Form.Control
-                    placeholder="Water requirement"
-                    type="text"
-                    name="water"
-                    id="water"
-                    defaultValue={ plant.water }
-                    hidden
-                />
-                {/* <Form.Label htmlFor="temperature">Temperature</Form.Label> */}
-                <Form.Control
-                    placeholder="Temperature requirement"
-                    type="text"
-                    name="temperature"
-                    id="temperature"
-                    defaultValue={ plant.temperature }
-                    hidden
-                />
-                {/* <Form.Label htmlFor="poisonous">Poisonous</Form.Label> */}
-                <Form.Control
-                    placeholder="Is the plant poisonous?"
-                    type="text"
-                    name="poisonous"
-                    id="poisonous"
-                    defaultValue={ plant.poisonous }
-                    hidden
-                />
-                {/* <Form.Label htmlFor="image">Image</Form.Label> */}
-                <Form.Control
-                    placeholder="Image URL"
-                    type="text"
-                    name="image"
-                    id="image"
-                    defaultValue={ plant.image }
-                    hidden
-                />
+
+                    <Form onSubmit={e => handleSubmit(e, plantCopy)}>     
                 {
                     user
                     ?
@@ -171,12 +114,13 @@ useEffect(() => {
                     null
                 }
                     </Form>
-                    <p > <br></br>{`${plant.description}`}</p>
+                    <p> <br></br>{`${plant.description}`}</p>
                     </div>
                 </Card.Text>
             </Card.Body>
         </Card>
-    ))
+        )
+    })
     
     return (
         <div style={ cardContainerStyle }>

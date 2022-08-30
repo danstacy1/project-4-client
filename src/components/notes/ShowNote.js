@@ -31,8 +31,8 @@ const ShowNote = (props) => {
 
     return (
         <>
-            <Card style={{ width: '50%', height: '100px' }}>
-                <Card.Header style={{overflowY: 'scroll'}}>{note.note}</Card.Header>
+            <Card style={{ width: '50%', height: '160px' }}>
+                <Card.Body style={{overflowY: 'scroll'}}>{note.note}</Card.Body>
                 <Card.Footer>
                     {/* <small>Condition: {toy.condition}</small><br/>
                     {
@@ -42,12 +42,14 @@ const ShowNote = (props) => {
                             <Button 
                                 variant="warning"
                                 onClick={() => setEditModalShow(true)}
+                                className='m-2'
                             >
                                 Edit Note
                             </Button>
                             <Button 
                                 onClick={() => destroyNote()} 
                                 variant="danger"
+                                className='m-2'
                             >
                                 Delete Note
                             </Button>

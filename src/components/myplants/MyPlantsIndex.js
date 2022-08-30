@@ -72,12 +72,12 @@ useEffect(() => {
     if (plants) {
         myPlantCards = plants.map(plant => (
         // console.log('user in MPIndex', user)
-        <Card style={{ width: '20%', margin: 10}} key={ plant._id }>
+        <Card style={{ width: '20%', height: '40%', maxHeight:'300px', margin: 10, backgroundColor: 'rgba(218, 247, 166, 0.6)'}} key={ plant._id}>
                 {/* console.log('user._id in MPIndex', myPlant.owner._id) */}
                 <Card.Header><Link to={`/greenhome/myplants/${plant._id}`}> { plant.name }</Link></Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        <Link to={`/greenhome/myplants/${plant._id}`}> <img src={`${plant.image}`} width="100%" height="auto" /></Link>
+                        <Link to={`/greenhome/myplants/${plant._id}`}> <img class= 'img-fluid' style={{textAlign: 'center', width: '100%'}} src={`${plant.image}`} /></Link>
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -85,22 +85,10 @@ useEffect(() => {
     }
         // </>
         
-        console.log("====================", user, plants)
+        // console.log("====================", user, plants)
     return (
-        <div style= { cardContainerStyle }>
-        
-            
-            <h3><u>My Garden{'\n'}</u></h3>
-            <div style={{
-                flexFlow: "row wrap",
-                display: "flex",
-                marginBottom: "300px",
-                marginLeft: "145px"
-                }}>
-          
+        <div style={ cardContainerStyle }>
             { myPlantCards }
-
-            </div>
         </div>
     )
 }

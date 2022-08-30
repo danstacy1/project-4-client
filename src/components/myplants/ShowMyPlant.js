@@ -19,9 +19,19 @@ const cardContainerLayout = {
     display: 'flex',
     justifyContent: 'center',
     flexFlow: 'row wrap',
-
+    marginRight: '14%'
 }
 
+const backgroundImg = {
+    backgroundImage: "url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimg.freepik.com%2Ffree-photo%2Fside-border-made-with-fresh-green-leaves-white-background_23-2147893798.jpg%3Fw%3D2000')",
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
+    width: '100vw',
+    height: '100vh',
+    overflowY: 'scroll',
+    textAlign: 'center'
+    }
 
 const ShowMyPlant = (props) => {
     const [plant, setPlant] = useState(null)
@@ -98,10 +108,10 @@ const ShowMyPlant = (props) => {
         return <LoadingScreen />
     }
     return (
-        <>
+        <div style={ backgroundImg }>
             <Container className="fluid">
-                <Card style={{ width: '100%', height: '500px'}}>
-                    <Card.Header><h3>{ plant.name }</h3></Card.Header>
+                <Card style={{ width: '100%', height: '500px', margin: '17px'}}>
+                    <Card.Header style={{backgroundColor: 'rgba(218, 247, 166, 0.6)'}}><h3>{ plant.name }</h3></Card.Header>
                     <Card.Body style={{overflowY: 'scroll'}}>
                         <Card.Text >
                         <div><small><img src={`${plant.image}`}></img></small></div>
@@ -165,7 +175,7 @@ const ShowMyPlant = (props) => {
                 handleClose={() => setNoteModalShow(false)} 
                 />
             </div>
-        </>
+        </div>
     )
 }
 export default ShowMyPlant

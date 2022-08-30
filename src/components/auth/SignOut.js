@@ -35,7 +35,7 @@ const SignOut = (props) => {
         width: '100vw',
         height: '100vh',
         backgroundAttachment: 'fixed',
-        overflowY: 'scroll'
+        overflowY: 'scroll',
         }
 
 
@@ -48,9 +48,9 @@ const SignOut = (props) => {
 		<>
         <div style={ cardContainerStyle }>
             <div className='row'>
-                <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                    <h2 style={{color: 'white'}}><b>Are you sure you want to sign out?</b></h2>
-                    <small style={{color: 'white'}}><b>We hate to see you go...</b></small><br/>
+                <div className='col-sm-10 col-md-8 mx-auto mt-5' style={{position: 'relative', top: '30px'}}>
+                    <h2 style={{color: 'yellow'}}><b>Are you sure you want to sign out?</b></h2>
+                    <h5 style={{color: 'yellow'}}><b>We hate to see you go...</b></h5><br/>
                     <ButtonGroup>
                         <Button variant='danger' onClick={onSignOut}>
                             Sign Out

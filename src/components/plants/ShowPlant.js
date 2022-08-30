@@ -27,6 +27,17 @@ const ShowPlant = (props) => {
     // console.log('user in props', user)
     // console.log('the plant in showPlant', plant)
     // destructuring to get the id value from our route parameters
+
+    const backgroundImg = {
+        backgroundImage: "url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimg.freepik.com%2Ffree-photo%2Fside-border-made-with-fresh-green-leaves-white-background_23-2147893798.jpg%3Fw%3D2000')",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        width: '100vw',
+        height: '100vh',
+        overflowY: 'scroll'
+        }
+    
     useEffect(() => {
         getOnePlant(id)
             .then(res => setPlant(res.data.plant))
@@ -69,10 +80,10 @@ const ShowPlant = (props) => {
         return <LoadingScreen />
     }
     return (
-        <>
+        <div style={ backgroundImg }>
             <Container className="fluid">
-                <Card>
-                    <Card.Header><h3>{ plant.name }</h3></Card.Header>
+                <Card style={{ margin: '10px'}}>
+                    <Card.Header style={{ backgroundColor: 'rgba(218, 247, 166, 0.6)'}}><h3>{ plant.name }</h3></Card.Header>
                     <Card.Body>
                         <Card.Text>
                 {/* button only visible if signed in */}
@@ -172,7 +183,7 @@ const ShowPlant = (props) => {
                 // triggerRefresh={() => setUpdated(prev => !prev)}
                 handleClose={() => setCopyModalShow(false)} 
             /> */}
-        </>
+        </div>
     )
 }
 export default ShowPlant
