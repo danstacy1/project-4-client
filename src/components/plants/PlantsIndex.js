@@ -9,6 +9,7 @@ import { Button, Form } from 'react-bootstrap'
 import { useParams, useNavigate } from 'react-router-dom'
 import { createPlant } from '../../api/myplants'
 import { copyPlantSuccess, copyPlantFailure } from '../shared/AutoDismissAlert/messages'
+import SearchBar from '../shared/SearchBar'
 // PlantsIndex should make a request to the api
 // To get all plants
 // Then display them when it gets them
@@ -37,7 +38,7 @@ const PlantsIndex = (props) => {
     const navigate = useNavigate()
 // console.log('Props in PlantsIndex', props)
 useEffect(() => {
-    console.log('owner in useefect', plants)
+    // console.log('owner in useefect', plants)
     // console.log(props)
     getAllPlants()
         .then(res => setPlants(res.data.plants))
@@ -87,46 +88,47 @@ useEffect(() => {
     }
 
     const seededPlants = plants.filter(plants => plants.isSeeded === true)
+    // {console.log("seeded plants=============", seededPlants.name)}
     
-    const plantCards = seededPlants.map(plant => {
-        const plantCopy = {
-            ...plant, 
-        }
-        delete plantCopy._id
-        return(
-        <Card style={{backgroundColor: 'rgba(218, 247, 166, 0.6)', width: '800px', height: '300px',  margin: 17, overflowY: 'scroll'}} key={ plant._id }class="cards" >
-            <Card.Body>
-                <Card.Text style={{display: 'flex', justifyContent: 'flex-end'}}>
-                    <Link to={`/greenhome/${plant._id}`}>
-                    <img  src={`${plant.image}`} style={{display: 'inline-block', padding: "15px"}} width="130px" height="auto"/>
-                    </Link>
-                    <div>
-                    <Link to={`/greenhome/${plant._id}`}> <h3 style={{color:'black'}}>{ plant.name }</h3></Link>
+    // const plantCards = seededPlants.map(plant => {
+    //     const plantCopy = {
+    //         ...plant, 
+    //     }
+    //     delete plantCopy._id
+    //     return(
+    //     <Card style={{backgroundColor: 'rgba(218, 247, 166, 0.6)', width: '800px', height: '300px',  margin: 17, overflowY: 'scroll'}} key={ plant._id }class="cards" >
+    //         <Card.Body>
+    //             <Card.Text style={{display: 'flex', justifyContent: 'flex-end'}}>
+    //                 <Link to={`/greenhome/${plant._id}`}>
+    //                 <img  src={`${plant.image}`} style={{display: 'inline-block', padding: "15px"}} width="130px" height="auto"/>
+    //                 </Link>
+    //                 <div>
+    //                 <Link to={`/greenhome/${plant._id}`}> <h3 style={{color:'black'}}>{ plant.name }</h3></Link>
 
-                    <Form onSubmit={e => handleSubmit(e, plantCopy)}>     
-                {
-                    user
-                    ?
-                    <>
-                    <Button type="submit">Add To My Garden</Button>
-                    </>
-                    :
-                    null
-                }
-                    </Form>
-                    <p> <br></br>{`${plant.description}`}</p>
-                    </div>
-                </Card.Text>
-            </Card.Body>
-        </Card>
-        )
-    })
+    //                 <Form onSubmit={e => handleSubmit(e, plantCopy)}>     
+    //             {
+    //                 user
+    //                 ?
+    //                 <>
+    //                 <Button type="submit">Add To My Garden</Button>
+    //                 </>
+    //                 :
+    //                 null
+    //             }
+    //                 </Form>
+    //                 <p> <br></br>{`${plant.description}`}</p>
+    //                 </div>
+    //             </Card.Text>
+    //         </Card.Body>
+    //     </Card>
+    //     )
+    // })
     
     return (
         <div style={ cardContainerStyle }>
-            { plantCards }
+        <SearchBar seededPlants = {seededPlants} handleSubmit = {handleSubmit} user = {user}/>
+            {/* { plantCards } */}
         </div>
     )
-
 }
 export default PlantsIndex
