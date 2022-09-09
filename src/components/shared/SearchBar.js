@@ -28,6 +28,7 @@ function SearchBar({seededPlants, handleSubmit, user}) {
                     ...searchedPlants, 
                 }
                 delete plantCopy._id
+                delete plantCopy.isSeeded
             return (
                 <div className="user" key={key}> 
                 <Card style={{backgroundColor: 'rgba(218, 247, 166, 0.6)', width: '800px', height: '300px',  margin: 17, overflowY: 'scroll'}} key={ searchedPlants._id }class="cards" >
