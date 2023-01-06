@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: `${process.env.APIURL}`,
+	production: 'https://harlequin-cod-vest.cyclic.app',
 	development: 'http://localhost:8000',
 }
 
