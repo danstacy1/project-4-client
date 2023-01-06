@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
@@ -107,7 +107,7 @@ const SignIn = (props) => {
                         Submit
                     </Button>
                 </Form>
-            <center style={{color: 'white'}}>Don't have an account? <a href='/sign-up'>sign-up</a></center>
+            <center style={{color: 'white'}}>Don't have an account? <Link onClick={navigate('/sign-up')}>sign-up</Link></center>
             </div>
         </div>
         </div>

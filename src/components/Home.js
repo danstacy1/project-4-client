@@ -1,3 +1,4 @@
+import { Link, useNavigate } from 'react-router-dom'
 import PlantsIndex from './plants/PlantsIndex'
 
 const Home = (props) => {
@@ -25,6 +26,8 @@ const Home = (props) => {
 
 	const { msgAlert } = props
 	
+	const navigate = useNavigate();
+
 	return (
 	<div style={backgroundImg}>
 				<div>
@@ -33,7 +36,7 @@ const Home = (props) => {
 
 			<h3>Helping you care for your house plants</h3><br></br>
 
-			<h4>Learn more from our <a href='/greenhome'>popular plants</a> or <a href='/sign-up'>sign up</a> to create and keep track of your own garden.</h4><br></br>
+			<h4>Learn more from our <Link onClick={navigate('/greenhome')}>popular plants</Link> or <Link onClick={navigate('/sign-up')}>sign up</Link> to create and keep track of your own garden.</h4><br></br>
 
 					<h5>If you're still on the fence about getting house plants, here are some benefits.</h5>
 						<ul style={homeListStyle}>
