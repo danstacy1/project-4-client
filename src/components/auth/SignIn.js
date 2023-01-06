@@ -107,7 +107,7 @@ const SignIn = (props) => {
                         Submit
                     </Button>
                 </Form>
-            <center style={{color: 'white'}}>Don't have an account? <Link onClick={navigate('/sign-up')}>sign-up</Link></center>
+            <center style={{color: 'white'}}>Don't have an account? <Link to='/sign-up'>sign-up</Link></center>
             </div>
         </div>
         </div>
